@@ -15,7 +15,7 @@
 # origin - 원격저장소 이름 (통상 origin 사용)
 ```
 
-### 원격저장소에 업로드하기
+### 원격저장소에 업로드 하기
 
 원격저장소는 파일,폴더가 아닌 버전을 관리
 
@@ -35,3 +35,12 @@ To https://github.com/sodamjeong/TIL.git
  * [new branch]      master -> master
  ```
   ```-원격저장소로 push 한 모습```
+
+### 원격저장소에서 다운로드 하기
+변경이 반영된 파일을 가지고 와서 작업
+가장 최근 버전의 파일이 반영된다.
+
+- $ git pull origin master
+- $ git pull <원격저장소><브랜치이름>
+
+
