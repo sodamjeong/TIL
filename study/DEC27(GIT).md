@@ -90,7 +90,7 @@
 
 - 설정 확인 방법
 
-* git config -|
-* git config --global -|
+* git config -l
+* git config --global -l
 * git config user.name
 
