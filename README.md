@@ -1,4 +1,4 @@
-# KDT 2기 
+# KDT 2기 (12/26 OT)
  ## DAY 1.
 ### 12/27 [MARKDOWN](markdown/markdown.md),   [CLI,GIT](study/DEC27.md)
 
