@@ -1,6 +1,6 @@
 # KDT 2기 (12/26 OT)
  ## DAY 1.
-### 12/27 [MARKDOWN](markdown/markdown.md),   [CLI,GIT](study/DEC27.md)
+### 12/27 [MARKDOWN](markdown/markdown.md),   [CLI,GIT](study/DEC27(GIT).md)
 
 >학습후기
 
@@ -12,7 +12,7 @@
 ---
        
 ## DAY 2.
-### 12/28 [GITHUB](study/DEC28.md)
+### 12/28 [GITHUB](study/DEC28(GITHUB).md)
 >학습후기
 
 신기한거 투성이다! 깃헙을 배우고 다른 분들과 함께 무언갈 만들 수 있을 것이란 기대가 든다 :)
