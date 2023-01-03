@@ -42,7 +42,7 @@
 
 ---
 
-## 1/3 [Python_grammar](JAN03(python2).md)
+## 1/3 [Python_grammar](JAN03(Python2).md)
 >학습 후기
 
 점점 복잡해진다..
