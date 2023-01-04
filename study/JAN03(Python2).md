@@ -127,13 +127,13 @@ else:
 
 ```python
 # 문자열 순회 예시
-1.
+1. 반복가능한 객체 요소
 n = input() # hi
 
 for N in n:
     print(N)  #h
               #i -> 한글자씩 세로로 출력
-2.
+2. range 인덱스화
 n = input() #hi
 
 for idx in range(len(n)):
