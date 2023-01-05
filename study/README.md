@@ -33,7 +33,7 @@
 
 ---
 
-## 1/2 [Python_basic](JAN02(Python).md)
+## 1/2 [Python_basic](JAN02(Python_Basic).md)
 >학습 후기
 
 파이썬에 입문!</br>
@@ -42,7 +42,7 @@
 
 ---
 
-## 1/3 [Python_grammar](JAN03(Python2).md)
+## 1/3 [Python_grammar](JAN03(Python_ControlStatement).md)
 >학습 후기
 
 점점 복잡해진다..
@@ -50,9 +50,19 @@
 
 ---
 
-## 1/4 [Python_Function](JAN04(Python3).md)
+## 1/4 [Python_Function](JAN04(Python_Function).md)
 >학습 후기
 
 적을 만난 기분...!
-코드를 분석하고 만드는 것에 오랜 시간이 걸리고 검색을 많이 하게 된다.
-방법은 반복학습뿐 계속 보다보면 해석하는 시간도 줄어 들지 않을까
+코드를 분석하고 만드는 것에 오랜 시간이 걸리고 검색을 많이 하게 된다. 방법은 반복학습뿐!!!!<br/>
+계속 보다보면 해석하는 시간도 줄어 들지 않을까..
+
+---
+
+## 1/5 [Python_Dict](JAN05_1(Python_Dict).md), [Python_module](JAN05_2(Python_module).md)
+
+>학습 후기
+
+정말 코딩에는 명령어가 끝이 없고 범위가 점점 커져가는게 두렵기도 하면서 재미있다.<br/> 
+모듈을 활용해 보거나 딕셔너리를 활용한 예제,실습 문제를 풀면서 그림도 그려보게 되고 흥미로웠다.<br/>
+한 가지 결과값을 두고 다양한 코드가 나오는게 쉽지 않지만 차근차근 해보고 있다.
