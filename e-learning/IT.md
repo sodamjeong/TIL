@@ -78,5 +78,25 @@ cpu 사용량 100% 넘어가거나
 
 ## 애플리케이션과 웹의 차이점
 
+웹 : 브라우저 중요, 서버에서 새로고침으로 다운 받아옴
+앱 : 서버에서 설치파일 설치 및 업데이트 다운
 
 
+## 우분투?
+
+Linux(리눅스) 
+
+os로서 무료로 배포하면서 버전이 다양하게 생겨남
+그 중 잘 만든 버전 중 하나가 우분투 이다.
+다른 버전 : 레드핫(서비스까지 포함 유료로 배포), 안드로이드
+
+## API - 개발자의 암호문
+
+클라이언트와 서버를 이어주는 개념
+
+Create - 올려줘(Request) -> 컴퓨터주소/timelinecreate (post)
+Read - 불러와줘(Request) -> 컴퓨터주소/timelineread (get)
+Update - 바꿔줘(Request) -> 컴퓨터주소/timelineupdate (put(전체),patch(일부분))
+Delete - 지워줘(Request) -> 컴퓨터주소/timelinedelete (delete)
+
+() 메서드
