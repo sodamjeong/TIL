@@ -24,55 +24,68 @@ for index,value in enumerate(x):
 
 print(sum(x)//5)
     
-# # 10871 x 보다 작은 수 
+# 10871 x 보다 작은 수 
+# 정수 N개로 이루어진 수열 A와 정수 X가 주어진다. 이때, A에서 X보다 작은 수를 모두 출력하는 프로그램을 작성하시오.
+# 첫째 줄에 N과 X가 주어진다. (1 ≤ N, X ≤ 10,000)
+# 둘째 줄에 수열 A를 이루는 정수 N개가 주어진다. 주어지는 정수는 모두 1보다 크거나 같고, 10,000보다 작거나 같은 정수이다.
 
-# n, x = map(int,input().split())
-# a = list(map(int,input().split()))
-# b = []
+n, x = map(int,input().split()) 
+a = list(map(int,input().split()))
+b = []
 
-# for i in a:
-#     if i < x:
-#         b.append(i)
-# print(*b)
+for i in a: # 입력받은 리스트 a 순회
+    if i < x: 
+        b.append(i)
+print(*b) # x 보다 작은 요소 리스트화 하여 출력
+# 리스트 앞에 * 을 붙혀주면 요소 그대로 출력해준다.
 
-# # 2480 주사위 세개
+# 2480 주사위 세개
+# 1에서부터 6까지의 눈을 가진 3개의 주사위를 던져서 다음과 같은 규칙에 따라 상금을 받는 게임이 있다. 
 
-# a, b, c = map(int,input().split())
-# x = [a, b, c]
+# 1. 같은 눈이 3개가 나오면 10,000원+(같은 눈)×1,000원의 상금을 받게 된다. 
+# 2. 같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)×100원의 상금을 받게 된다. 
+# 3. 모두 다른 눈이 나오는 경우에는 (그 중 가장 큰 눈)×100원의 상금을 받게 된다.  
+
+a, b, c = map(int,input().split())
+x = [a, b, c]
   
-# if a == b == c:
-#     print(10000 + 1000 * a)
-# elif len(set(x)) == 2 :
-#     print(1000 + (100 * sorted(x)[1]))
-# else:
-#     print(100 * max(x))
+if a == b == c: # 같은 눈이 3개 나왔을때
+    print(10000 + 1000 * a)
+elif len(set(x)) == 2 : # 같은 눈이 두개 나왔을 때 set 할 경우 길이는 2일 것이다.
+    print(1000 + (100 * sorted(x)[1])) 
+    # 같은 눈이 두개일 경우 정렬하면 세개의 숫자중 두번째 숫자는 무조건 중복 수 이다.
+else:
+    print(100 * max(x)) 
+    # 마지막 모두 다른경우 max 함수로 제일 큰 눈을 구해 상금을 곱했다.
 
-# # 10886 0 = not cute / 1 = cute
+# 10886 0 = not cute / 1 = cute
+# 첫 번째 줄에 설문조사를 한 사람의 수 N (1 ≤ N ≤ 101, N은 홀수)가 주어진다.
+# 다음 N개의 줄에는 각 줄마다 각 사람이 설문 조사에 어떤 의견을 표명했는지를 나타내는 정수가 주어진다. 
+# 0은 준희가 귀엽지 않다고 했다는 뜻이고, 1은 준희가 귀엽다고 했다는 뜻이다
+n = int(input())
+x =[]
 
-# n = int(input())
-# x =[]
+for i in range(n):
+    a = int(input())
+    x.append(a) # 설문조사 결과를 리스트로 만들고
 
-# for i in range(n):
-#     a = int(input())
-#     x.append(a)
+if x.count(0) > x.count(1): # 0과 1의 수를 카운트하는 메소드를 사용했다.
+    print('Junhee is not cute!')
+else:
+    print('Junhee is cute!')
 
-# if x.count(0) > x.count(1):
-#     print('Junhee is not cute!')
-# else:
-#     print('Junhee is cute!')
+# 2506 점수계산
 
-# # 2506 점수계산
+n = int(input())
+x = list(map(int,input().split()))
+n = 0
+m = []
 
-# n = int(input())
-# x = list(map(int,input().split()))
-# n = 0
-# m = []
+for i in x:
+    if i == 1: 
+        n += 1 # o 일 경우 점수를 쌓고
+        m.append(n) # 맞은 문제의 점수를 리스트에 추가
+    else: # x 일 경우 다시 0점으로 리셋
+        n = 0
 
-# for i in x:
-#     if i == 1:
-#         n += 1
-#         m.append(n)
-#     else:
-#         n = 0
-
-# print(sum(m))
+print(sum(m)) # 리스트의 점수를 sum 함수로 합쳐서 출력
