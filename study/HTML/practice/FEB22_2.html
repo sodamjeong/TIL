@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: red; /*!important; - 모든 조건 무시 해당 조건이 제일 우선이 되는 함수(잘 사용 x)*/ 
+        }
+        
+        h2 {
+            color: orange;
+        }
+
+        h3,
+        h4 {
+            color: blue;
+        }
+
+        .green {
+            color: green;
+        }
+
+        #purple {
+            color: purple;
+        }
+        /* 자식 결합자*/
+        .green > span {
+            font-size: 50px;
+        }
+        /* 자손 결합자*/
+        .green li {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="green"> Heading </h1>
+    <h2>선택자 연습</h2>
+    <h3>Hello</h3>
+    <h4>Nice to meet you</h4>
+    <p id="purple">과목 목록</p>
+    <ul class="green">
+        <li>파이썬</li>
+        <li>알고리즘</li>
+        <li>웹
+            <ol>
+                <li>HTMl</li>
+                <li>CSS</li>
+                <li>JS</li>
+            </ol>
+        </li>
+    </ul>
+    <p class="green">Lorem, <span> ipsum </span> dolor.</p>
+</body>
+</html>
