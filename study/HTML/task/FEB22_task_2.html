@@ -5,15 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim Berners-Lee Info</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <style>
         h1 { 
-            color : royalblue;
+            color : rgb(26, 70, 164);
         }
         h4 {
             color : grey;
         }
         a {
             color : coral;
+        }
+        .blue {
+            color: darkblue;
+            font-size: 15px;
+        }
+        .red {
+            color : red;
+        }
+        .red li {
+            color : olive;
+        }
+        p,li {
+            color : black;
+            font-size: 14px;
+            font-family: 'Noto Sans KR', sans-serif;;
         }
     </style>
 </head>
@@ -22,7 +40,7 @@
     <h1>팀 버너스리</h1>
     <h4><em>프로그래머</em></h4>
     <p>1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발했다. 
-    인터넷의 기반을 닦은 여러 공로로 <strong style=" color : red">웹의 아버지</strong>라고 불리는 인물 중 하나이다.
+    인터넷의 기반을 닦은 여러 공로로 <strong class="red">웹의 아버지</strong>라고 불리는 인물 중 하나이다.
     </p>
     <h2>인물 정보</h2>
     <ul>
@@ -31,10 +49,27 @@
         <li> 위키 : <a href="https://ko.wikipedia.org/wiki/팀_버너스리"> 
         https://ko.wikipedia.org/wiki/팀_버너스리</a></li>
     </ul>
+    <h2>생애</h2>
+    <p>버너스리는 잉글랜드 런던에서 태어났으며, 부모는 <strong class="blue">메리 리 우즈(Mary Lee Woods)</strong>와 
+        <strong class="blue">콘웨이 버너스리(Conway Berners-Lee)</strong>이다.<br>
+        1990년에 <strong class="blue">낸시 칼슨(Nancy Carlson)</strong>과 결혼하였으나 2011년 이혼하였다.<br>
+        2014년, <strong class="blue">로즈메리 리스(Rosemary Leith)</strong>와 런던 세인트 제임스 궁전에서 결혼하였다.
+    </p>
     <h2>수상 경력</h2>
     <ul>
-        <li><a href="https://ko.wikipedia.org/wiki/%ED%8A%9C%EB%A7%81%EC%83%81">튜링상</a>(2016)</li>
-        <li>메리트 훈장(2007)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/튜링상">튜링상</a>(2016)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/메리트_훈장">메리트 훈장</a>(2007)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/대영_제국_훈장">대영 제국 훈장 2등급</a>(2004)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/왕립학회">왕립학회</a> 회원(2001)</li>
+        <li>왕립공학학회 회원(2001)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/왕립예술학회">왕립예술학회</a> 회원(2001)</li>
+        <li>영국 컴퓨터학회 최고회원(1995)</li>
     </ul>
+    <h2>저서</h2>
+    <ol class="red">
+        <li> <strong>당신이 꿈꾸는 인터넷 세상 월드와이드웹(Weaving the web) </strong></li>
+        <li> <strong>정보 관리: 한가지 제안(Tim Berners-Lee, CERN) </strong></li>
+    </ol>
+
 </body>
 </html>
