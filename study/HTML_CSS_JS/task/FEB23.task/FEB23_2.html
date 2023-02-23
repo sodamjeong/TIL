@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <title>Tim Berners-Lee Card</title>
+    <style>
+        
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+            box-sizing: border-box;
+        }
+        h2 {
+            color: rgb(165, 132, 198);
+            height: 20px;
+        }
+        h2 em{
+            color:gray;
+        }
+        p span {
+            color:  red;
+        }
+        .box {
+            width: 600px;
+            height: 800px;
+            padding : 10px;
+            border : 1px solid black ;
+            border-radius: 20px;
+            overflow: fixed;
+        }
+        .dashed {
+            height: 40px;
+            border-bottom: 10px  black;
+            border-bottom: black dashed;
+        }
+        .info {
+            width : auto;
+            height: 20px;
+            border-bottom: 1px solid black;
+            margin : 3% 5%;
+            font-size: 0.9em;
+        }
+        .info2 {
+            width : auto;
+            height: 20px;
+            border-bottom: 1px solid black;
+            margin : 3% 5%;
+            font-size: 0.9em;
+            background: linear-gradient(to right, blue 0%, red 12%);
+            -webkit-background-clip: text;
+            color : transparent;
+        }
+        p strong {
+            color : navy;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 0.8em;;
+        }
+
+        .box2 {
+            height: 200px;
+            border: 2px dotted gray;
+            border-radius: 5px;
+            overflow: auto;
+            margin: 1em auto 3em;
+            padding: 10px;
+        }
+        img {
+            width: 400px;
+            height: 250px;
+            object-fit: fill;
+            margin: auto;
+        }
+        ol li {
+            color : rgb(120, 33, 207);
+        }
+        .center {
+            text-align: center;
+        }
+        a {
+            color: slateblue;
+        }
+
+        .box2::-webkit-scrollbar {
+            width: 8px;
+        }
+        .box2::-webkit-scrollbar-thumb{
+            background-color: rgb(248, 240, 204);
+            border-radius: 10px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+        }
+        .box2::-webkit-scrollbar-track{
+            background-color: rgb(201, 201, 255) ;
+            border-radius: 10px;
+        }
+    </style>
+<body>
+
+    <div class="box">
+    <div class="center">
+    <img src="../01_HTML_CSS_Basics_01_01.jpg" alt="팀_버너스리">
+    </div>
+    <h1>팀 버너스리</h1>
+    <h2 class="dashed"><em>프로그래머</em></h2>
+    <p class="info">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. <span> 웹의  아버지</span></p>
+    <p class="info2">국적 : 영국</p>
+    <p class="info">생년월일 : 1955년 6월 8일</p>
+    <p class="info">추가 정보 : <a href="https://ko.wikipedia.org/wiki/팀_버너스리">https://ko.wikipedia.org/wiki/팀_버너스리</a>
+    </p>
+    <div class="box2">
+    <h2>생애</h2><hr>
+    <p class="text">버너스리는 잉글랜드 런던에서 태어났으며,<br> 
+        부모는 <strong class="blue">메리 리 우즈(Mary Lee Woods)</strong>와 
+        <strong class="blue">콘웨이 버너스리(Conway Berners-Lee)</strong>이다.<br>
+        1990년에 <strong class="blue">낸시 칼슨(Nancy Carlson)</strong>과 결혼하였으나 2011년 이혼하였다.<br>
+        2014년, <strong class="blue">로즈메리 리스(Rosemary Leith)</strong>와 런던 세인트 제임스 궁전에서 결혼하였다.
+    </p>
+    <h2>수상 경력</h2><hr>
+    <ul>
+        <li><a href="https://ko.wikipedia.org/wiki/튜링상">튜링상</a>(2016)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/메리트_훈장">메리트 훈장</a>(2007)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/대영_제국_훈장">대영 제국 훈장 2등급</a>(2004)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/왕립학회">왕립학회</a> 회원(2001)</li>
+        <li>왕립공학학회 회원(2001)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/왕립예술학회">왕립예술학회</a> 회원(2001)</li>
+        <li>영국 컴퓨터학회 최고회원(1995)</li>
+    </ul>
+    <h2>저서</h2><hr>
+    <ol>
+        <li> <strong>당신이 꿈꾸는 인터넷 세상 월드와이드웹(Weaving the web) </strong></li>
+        <li> <strong>정보 관리: 한가지 제안(Tim Berners-Lee, CERN) </strong></li>
+    </ol>
+    </div>
+    </div>
+</body>
+</html>
