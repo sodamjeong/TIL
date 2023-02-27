@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/09e31e267e.js" crossorigin="anonymous"></script>
+    <title>오늘의집_냉장고</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'SLEIGothicTTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            box-sizing: border-box;
+            font-family: 'Pretendard-Regular';
+        }
+        .box1 {
+            width: 300px;
+            height: 500px;
+        }
+        img {
+            width: 100%
+        }
+        .relative {
+            position: relative;
+        }
+        .absolute {
+            position: absolute;
+        }
+        .left {
+            top : 0;
+            left : 20px;
+            width: 30px;
+            height: 40px;
+        }
+        .right {
+            top : 0;
+            right: 0;
+            width: 90px;
+            height: 90px;
+        }
+        h2 {
+            color: gray;
+        }
+        .box2 {
+            line-height: 10px;
+        }
+        h1 {
+            font-size: 1.7em;
+        }
+        .bold {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: 'SLEIGothicTTF';
+        }
+        .gray {
+            color: gray;
+            font-weight: bolder;
+        }
+        p strong {
+            color: black;
+        }
+        i {
+            color: rgb(249, 147, 110);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+    <div class="relative">
+    <img src="https://cdn.discordapp.com/attachments/1079630543446089790/1079630754679623761/01.png" alt="">
+    <div class="absolute right">
+    <img src="https://cdn.discordapp.com/attachments/1079630543446089790/1079630755237470349/03.png" alt="">
+    </div>
+    <div class="absolute left">
+    <img src="./02_1.png" alt="">
+    </div>
+    </div>
+    <div class="box2">
+    <h2>LG전자</h2>
+    <h1>LG 디오스 노크온</h1>
+    <h1 class="bold">1,700,000</h1>
+    <p class="gray"><i class="fa-solid fa-star"></i><strong>4.8</strong> 리뷰 300</p>
+    </div>
+    </div>
+</body>
+</html>
