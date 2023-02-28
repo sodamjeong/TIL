@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로레이아웃</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container_base {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin : 50px 50px;
+        }
+        .container {
+            border: 1px solid gray;
+            width: 60%;
+            background-color: papayawhip;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 20px;
+        }
+
+        .container2{
+            border: 1px solid gray;
+            width: 60%;
+            background-color: papayawhip;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .box{
+            color : rgb(209, 185, 222);
+            font-size: 30px;
+            font-weight: bold;
+            width: 80px;
+            height: 50px;
+        }
+        .box2{
+            color: black;
+            width: 150px;
+            background-color: white;
+            overflow: auto;
+            border: 1px solid gray;
+            margin : 30px;
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container_base">
+        <div class="container">
+            <div class="box">Logo</div>
+            <div class="box">Login</div>
+        </div>
+
+        <div class="container2">
+            <div class="box2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, impedit! Voluptatibus assumenda amet officiis nesciunt sit illum reiciendis consectetur expedita molestias deserunt officia optio enim veritatis, quasi inventore quisquam incidunt.</div>
+            <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, maxime excepturi quos quas provident quisquam nemo reprehenderit dolorum facere architecto id eaque esse optio ex deserunt. Quia nobis perspiciatis repellat.</div>
+            <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. In temporibus adipisci corrupti ut culpa, dolorem sunt ipsum aliquam id ratione sed doloribus repellat soluta tempore nam esse nobis iste eos?</div>
+        </div>
+    </div>
+</body>
+</html>
