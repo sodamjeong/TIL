@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀버너스리가로card</title>
+    <style>
+        * { 
+            box-sizing: border-box;
+        }
+        .card {
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card__img {
+            margin: 10px;
+            justify-content: center;
+        }
+        .card__img__person {
+            position: relative;
+            width: 100%;
+        }
+        .card__img__cty {
+            position: absolute;
+            width: 18%;
+            height: 13%;
+            top: 0;
+            right: 0;
+        }
+        .card__body {
+            margin-left: 20px;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card__body__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .card__body__text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="card__img">
+        <div class="card__img__person">
+        <img src="../FEB27.task/01.jpg" alt="팀버너스리">
+        <img class="card__img__cty" src="../FEB27.task/02.png" alt="영국국기">
+        </div>
+    </div>
+    <div class="card__body">
+        <div class="card__body__title">
+            <div><h1>팀 버너스리</h1></div>
+            <div><h3>프로그래머</h3></div>
+        </div>
+        <div>
+            <p>1989년 월드 와이드 퉵의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지</p>
+        </div>
+        <div class="card__body__text">
+            <div>국적</div>
+            <div>영국</div>
+        </div>
+        <div class="card__body__text">
+            <div>생년월일</div>
+            <div>1955년 6월 8일</div>
+        </div>
+        <div class="card__body__text">
+            <div>직업</div>
+            <div>전산과학자, 프로그래머, 교수</div>
+        </div>
+        <div class="card__body__text">
+            <div>출신 대학</div>
+            <div>옥스퍼드 대학교 물리학 학사</div>
+        </div>
+        <div class="card__body__text">
+            <div>추가 정보</div>
+            <div><a href="https://ko.wikipedia.org/wiki/팀_버너스리">https://ko.wikipedia.org/wiki/팀_버너스리</a></div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>
