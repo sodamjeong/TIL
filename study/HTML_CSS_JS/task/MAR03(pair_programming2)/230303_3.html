@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    .page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: black;
+    }
+
+    .contents {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: black;   
+    }
+    
+    .contents_sidebar {
+        color : white;
+        width: 20%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        position: sticky;
+        top: 0;
+    }
+
+    .contents_sidebar_img {
+        width: 60%;
+        height: 30%;
+    }
+
+    .contents_main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: black;        
+    }
+
+    .nav_bar {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: rgba(12, 12, 12, 0.895);
+        position: sticky;
+        top: 0;
+    }
+
+    .nav_button {
+        border-radius: 10rem;
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .nav_account {
+        color: white;
+        margin-left: auto;
+        text-decoration-line: none;
+    }
+
+    .nav_login {
+        color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-decoration-line: none;
+    }
+
+    .contents_main_album {
+        width: 100%;
+        background-color: rgb(29, 28, 28);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .album {
+        border-radius: 1rem;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin: 20px;
+    }
+
+    .album_img {
+        width: 200px;
+        height: 200px;
+        border-radius: 1rem;
+        align-items: center;
+    }
+
+    .footer {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        background-color: black;
+        color: white;
+    }        
+    
+</style>
+
+<body>
+    <div class="page">
+        <div class="contents">
+            <div class="contents_sidebar">
+                <a href="https://open.spotify.com/"><img class="contents_sidebar_img" src="./spotify_logo.png" alt="스포티파이로고"></a>
+                <p>홈</p>         
+                <p>검색하기</p>         
+                <p>내 라이브러리</p>         
+            </div>
+            <div class="contents_main">
+                <div class="nav_bar">
+                    <div class="nav_button"> ⇦ </div>
+                    <div class="nav_button"> ⇨ </div>
+                    <a class="nav_account" href="https://www.spotify.com/kr-ko/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2F">
+                        가입하기
+                    </a>
+                    <a class="nav_login" href="https://accounts.spotify.com/ko/login?continue=https%3A%2F%2Fopen.spotify.com%2F">
+                        로그인</a>
+                </div>
+                <div class="contents_main_album">
+                    <div class="album">
+                        <img class="album_img" src="./newjeans_black.png" alt="뉴진스앨범사진">
+                        <p>뉴진스</p>
+                        <p>Ditto</p>
+                    </div>
+                    <div class="album">
+                        <img class="album_img" src="./newjeans_black.png" alt="뉴진스앨범사진">
+                        <p>뉴진스</p>
+                        <p>OMG</p>
+                    </div>
+                    <div class="album">
+                        <img class="album_img" src="./newjeans_blue.png" alt="뉴진스앨범사진">
+                        <p>뉴진스</p>
+                        <p>Hype boy</p>
+                    </div>
+                    <div class="album">
+                        <img class="album_img" src="./bss.png" alt="부석순앨범사진">
+                        <p>부석순 (SEVENTEEN)</p>
+                        <p>파이팅 해야지 (Feat.이영지)</p>
+                    </div>
+                    <div class="album">
+                        <img class="album_img" src="./younha.png" alt="윤하앨범사진">
+                        <p>윤하 (YOUNHA)</p>
+                        <p>사건의 지평선</p>
+                    </div>         
+                    <div class="album">
+                        <img class="album_img" src="./stayc.png" alt="스테이씨앨범사진">
+                        <p>STAYC</p>
+                        <p>Teddy Bear</p>
+                    </div>                                                                              
+                </div>
+
+            </div>
+            
+        </div>
+        <footer class="footer">
+            정해인, 최은비, 정소담
+        </footer>
+    </div>
+</body>
+</html>
