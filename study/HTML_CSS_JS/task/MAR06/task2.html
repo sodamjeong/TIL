@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .btn-bd-primary {
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet);
+        --bs-btn-border-color: var(--bd-violet);
+        --bs-btn-border-radius: .5rem;
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+        --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+        --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+        }
+    </style>
+</head>
+<body class="bg-warning p-2 bg-opacity-10">
+    <div class="m-auto" style="width: 600px;">
+        <form class="mt-5">
+            <div class="h-50 mb-4 text-center bg-success p-2 text-white bg-opacity-75 border-2 border-success rounded-2">
+                Login
+            </div>
+            <div class="mb-4">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control border-secondary" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control border-secondary" id="exampleInputPassword1" placeholder="password">
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remember me</label>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-outline-primary" style="width: 200px">Login</button>
+                <button type="button" class="btn btn-outline-danger" style="width: 200px">Join</button>
+                <button type="button" class="btn btn-outline-dark" style="width: 200px">Back</button>
+            </div>
+        </form>
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+    crossorigin="anonymous"></script> 
+</body>
+</html>
