@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>airbnb</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body style="line-height: 1.3">
+  <header class="position-sticky top-0 z-3 w-100">
+    <nav class="container navbar p-2 bg-white border-bottom border-secondary-subtle mb-3 w-100">
+      <div>
+        <a class="navbar-brand" href="https://www.airbnb.co.kr/south-korea/stays#popular-amenities">
+          <img src="img/logo.png" alt="airbnb" width="130" height="40">
+        </a>
+      </div>
+      <div>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-black" href="https://www.airbnb.co.kr/host/homes?">호스팅 시작하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-black" href="https://www.airbnb.co.kr/signup_login">회원 가입</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-black" href="https://www.airbnb.co.kr/login">로그인</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!--입력 카드-->
+    <div class="container d-block d-md-none">
+      <div class="card border-0" style="width: 100%;">
+        <div class="card-body p-3">
+          <p class="fw-bold mb-3 fs-3">한국의 휴가 임대 시설</p>
+          <h6 class="card-subtitle mb-2 text-muted">에어비앤비에서 독특한 숙소를 예약하세요.</h6>
+
+          <div class="container row col-12">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingInputValue" placeholder="어디든지" value="한국">
+              <label for="floatingInputValue">위치</label>
+            </div>
+
+            <div class="input-group my-3">
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="form-floating">
+                    <input type="text" id="datepicker" class="form-control datepicker" placeholder="날짜 입력">
+                    <label for="datepicker">체크인</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <div class="form-floating">
+                    <input type="text" id="datepicker2" class="form-control datepicker" placeholder="날짜 입력">
+                    <label for="datepicker2">체크아웃</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="form-floating">
+                <select class="form-select form-select-sm" aria-label="성인" id="adults">
+                  <option selected value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                </select>
+                <label for="adults">성인</label>
+              </div>
+              <div class="form-floating">
+                <select class="form-select form-select-sm" aria-label="어린이" id="child">
+                  <option selected value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+                <label for="child">어린이</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="container row col-12">
+            <button type="button" class="btn btn-lg text-white fw-bold fs-6 my-3"
+              style="background-color: #FF385C ;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>검색</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container position-relative d-none d-md-block " style="width:100%; height:600px; padding-left: 15%">
+      <div class="d-flex justify-content-end" style="height: 600px;">
+        <img class="rounded-3" style="width:100%; height:100%;" src="img/bg.webp" alt="">
+      </div>
+      <form class="content position-absolute shadow" style="top: 20%; left: 3%;">
+        <!-- card -->
+        <div class="card" style="width: 25rem; border-radius: 10px;">
+          <div class="card-body p-4">
+            <h1 class="card-title fw-bold fs-2">한국의 휴가 임대 시설</h1>
+            <h6 class="card-subtitle mb-2 text-muted">에어비앤비에서 독특한 숙소를 예약하세요.</h6>
+
+            <div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputValue" placeholder="어디든지" value="한국">
+                <label for="floatingInputValue">위치</label>
+              </div>
+
+              <div class="input-group my-3">
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="form-floating">
+                      <input type="text" id="datepicker" class="form-control datepicker" placeholder="날짜 입력">
+                      <label for="datepicker">체크인</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="form-floating">
+                      <input type="text" id="datepicker2" class="form-control datepicker" placeholder="날짜 입력">
+                      <label for="datepicker2">체크아웃</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="form-floating">
+                  <select class="form-select form-select-sm" aria-label="성인" id="adults">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                  </select>
+                  <label for="adults">성인</label>
+                </div>
+                <div class="form-floating">
+                  <select class="form-select form-select-sm" aria-label="어린이" id="child">
+                    <option selected value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                  <label for="child">어린이</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="container row col-lg-12">
+              <button type="button" class="btn btn-lg text-white fw-bold fs-6 my-3"
+                style="background-color: #FF385C ;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>검색</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container my-4">
+      <h2 class="fs-4 fw-bold">최고의 평점을 받은 한국의 휴가 숙소</h2>
+      <p class="text-secondary mb-3">위치 청결도 등에서 게스트의 높은 평가를 받은 숙소입니다.</p>
+
+      <div class="row row-cols-1 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative w-100 h-80 rounded-2">
+              <img src="https://a0.muscache.com/im/pictures/a809a76b-311e-4c90-bce1-2a0898ad3e15.jpg?im_w=1200"
+                class="w-100 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">전주시 완산구의 집</h5>
+                <h5 class="card-title fw-bold">★ 4.9 (48)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 5; /* 표시할 줄 수 */-webkit-box-orient: vertical;">
+                한옥스테이 “화응(花應)”<br> 화응(花應)은 전주의 한 가운데, 완산구 태평동에 위치하고 있습니다. 태평동은 과거 최초의 전주역과 연초제조창이 있던 교통과 상권의 중심이었으며 상인들의
+                마을인 주택가 골목에 그 당시 풍수와 지리를 활용하여 1969년 15평으로 건축되었습니다. 현재는 과거의 건축물들이 없어지고 아파트와 현대식 건물들이 세워지지만 화응(花應)은 그때 그
+                모습 그대로 사색을 위한 프라이빗 스테이로 디자인되었습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative w-100 h-80 rounded-2">
+              <img src="https://a0.muscache.com/im/pictures/0092d3ff-2477-48d1-ba23-7876c9949878.jpg?im_w=1200"
+                class="w-100 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">게스트용 별채</h5>
+                <h5 class="card-title fw-bold">★ 4.97 (514)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                별이 보이는 감성충만 프라이빗 복층 Cosmos Room<br>영월의 스테이하우스는 커플이 프라이빗하게 쉬기 좋은 객실입니다. 복층 구조로 되어있어 2층에 올라가면, 아늑하고 따뜻한
+                느낌의 객실에서 편안하게 즐기 실 수 있습니다. 창밖으로 들리는 계곡물소리와 지저귀는 새소리 그리고 맑은 공기는 도시에서 지친 마음에 휴식을 주며 매일 청결하게 관리하는 침구는 편안한
+                잠자리를 제공합니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative w-100 h-50 rounded-2">
+              <img src="https://a0.muscache.com/im/pictures/da637179-37a8-46ed-be84-e475ed399f5e.jpg?im_w=1200"
+                class="w-100 h-100 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body  mb-3">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">대관령 양떼목장 펜션</h5>
+                <h5 class="card-title fw-bold">★ 4.97 (270)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 5;-webkit-box-orient: vertical;">
+                저희 숙소는 대관령 스위스마을 안에 위치해 있으며 항상 새집처럼 관리하고 있으며 숙소 중에는 유일하게 이층테라스가 있어 여름에는 멋진 뷰를 보며 바베큐 가능하고 겨울이나 비가 올 때는
+                일층 파고라에 천막이 있어 사계절 바베큐 가능합니다 ~ ^^2022년 10월부터는 날 좋은날 멋진 불멍도 가능합니다~</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 모든 유형의 휴가 숙소 -->
+    <div class="container mb-4">
+      <div class="row">
+        <h2 class="fs-4 fw-bold mb-2">모든 유형의 휴가 숙소</h2>
+        <p class="text-secondary">충분한 공간을 제공하는 숙소를 찾아보세요</p>
+      </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+
+      <div class="card mx-2 border-0" style="width:300px; height:280px;">
+        <img src="https://a0.muscache.com/im/pictures/a17609e2-d762-4365-a313-62e619e59872.jpg?im_w=720"
+          class="card-img-top" alt="...">
+        <ul class="list-unstyled">
+          <li>
+            <p class="title fw-bold">숙소</p>
+            <p class="text-secondary">모든 필수품을 갖춘 편안한 숙소</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card mx-2 border-0" style="width:300px; height:280px;">
+        <img src="https://a0.muscache.com/im/pictures/f20dbdb1-05b5-4f01-97ba-b113edc20795.jpg?im_w=720"
+          class="card-img-top" alt="...">
+        <ul class="list-unstyled">
+          <li>
+            <p class="title fw-bold">호텔</p>
+            <p class="text-secondary">멋진 스타일의 숙소와 편의시설</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card mx-2 border-0" style="width:300px; height:280px;">
+        <img src="https://a0.muscache.com/im/pictures/62d0e70e-7107-4d1b-beb5-21f0ad2bb811.jpg?im_w=720"
+          class="card-img-top" alt="...">
+        <ul class="list-unstyled">
+          <li>
+            <p class="title fw-bold">특색 있는 숙소</p>
+            <p class="text-secondary">단순한 숙소 이상의 특별함이 담긴 공간</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <!-- 한국의 휴가용 임대 숙소의 인기 편의 시설 -->
+    <div class="container my-4">
+      <h2 class="fs-4 fw-bold mb-3 py-2">한국의 휴가용 임대 숙소의 인기 편의 시설</h2>
+      <div class="d-flex flex-wrap justify-content-center">
+        <button type="button"
+          class="border shadow border-0 rounded-2 m-2 btn btn-light text-black fw-bold d-flex flex-column"
+          style="width: 120px;">
+          <div><span class="material-symbols-outlined">flatware</span></div>
+          <div>주방</div>
+        </button>
+        <button type="button"
+          class="border shadow border-0 rounded-2 m-2 btn btn-light text-black fw-bold d-flex flex-column"
+          style="width: 120px;">
+          <div><img src="img/wifi.svg" alt=""></div>
+          <div>무선 인터넷</div>
+        </button>
+        <button type="button"
+          class="border shadow border-0 rounded-2 m-2 btn btn-light text-black fw-bold d-flex flex-column"
+          style="width: 120px;">
+          <div><span class="material-symbols-outlined">pool</span></div>
+          <div>수영장</div>
+        </button>
+        <button type="button"
+          class="border shadow border-0 rounded-2 m-2 btn btn-light text-black fw-bold d-flex flex-column"
+          style="width: 160px;">
+          <div><img src="img/p-circle.svg" alt=""></div>
+          <div>건물 내 무료주차</div>
+        </button>
+        <button type="button"
+          class="border shadow border-0 rounded-2 m-2 btn btn-light text-black fw-bold d-flex flex-column"
+          style="width: 160px;">
+          <div><span class="material-symbols-outlined">ac_unit</span></div>
+          <div>에어컨</div>
+        </button>
+      </div>
+    </div>
+
+
+
+    <!-- 한국의 다른 근사한 휴가 숙소 -->
+    <div class="container my-4">
+      <h2 class="fs-4 fw-bold mb-2">한국의 다른 근사한 휴가 숙소</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/57715e53-f41c-4881-b3dc-2c7620c057fa.jpg?im_w=2560"
+                class="card-img-top w-100 h-50 rounded-2" style="object-fit: cover;" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">수영구의 레지던스</h5>
+                <h5 class="card-title fw-bold">★ 5 (122)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                무제_제목없을용기_고요평온힐링_광안대교하프오션뷰_65인치넷플유투브_해돋이</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/2b526bbb-0461-46cd-8b89-68cb4a251475.jpg?im_w=2560"
+                class="w-100 rounded-2 cover" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Gahoe-dong</h5>
+                <h5 class="card-title fw-bold">★ 4.93 (80)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                [aboheon / 아보헌] 안국역 도보 10분 독채 한옥 스테이</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/3581a7b8-9aa3-473c-a487-948a8cb0e5b2.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">마포구의 공동 주택</h5>
+                <h5 class="card-title fw-bold">★ 4.84 (265)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                JSERENITY F</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/29a7f7d1-4daa-4b61-8e76-1228e81e0ed5.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Mundeok-myeon</h5>
+                <h5 class="card-title fw-bold">★ 4.82 (210)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">
+                옛 정취를 물씬 느낄 수 있는 명품 고택! <목임당> 한옥 스테이 !애견숙박비용 있슴</p>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/16eac73c-1457-446d-9aed-ea4301ff520c.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">종로구의 개인실</h5>
+                <h5 class="card-title fw-bold">★ 4.95 (174)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                spa#2 _Analog_Hanok_북촌</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Hwachon-myeon</h5>
+                <h5 class="card-title fw-bold">★ 4.89 (100)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                NEW 스테이구구(Stay GUGU) 302호</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img
+                src="https://a0.muscache.com/im/pictures/miso/Hosting-768501668140224682/original/e3f22391-a19a-4d60-a993-e323853ae5d1.jpeg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Gyeongju-si의 집</h5>
+                <h5 class="card-title fw-bold">★ 5 (31)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                바쁜 도심에서 벗어나 새소리 들으며 여유로운 아침을 맞이할 수 있는 초가집 독채 스테이
+                경주 유네스코에 등재된 양동마을에서 특별한 하루 ఇ </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img
+                src="https://a0.muscache.com/im/pictures/miso/Hosting-48844349/original/84e676cb-619e-4972-aeaa-5eec2611bfe4.jpeg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Mohyeon-myeon</h5>
+                <h5 class="card-title fw-bold">★ 4.91 (204)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                [숲 뷰]_#인하우스글램핑_하루 단독 1팀(2인)_분당 20분</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/4c5c3078-d69c-4fcd-a7ce-4753439df03d.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">전주시 게스트</h5>
+                <h5 class="card-title fw-bold">★ 4.84 (213)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                전주 감성한옥 '라누이-블랑슈' 당신의 이상이 일상이 되는곳, 전주 라누이블랑슈 (La Nuit Blanche) 입니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/6275ce77-b67b-40ec-bad6-665d65c5a503.jpg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">경주의 개인실</h5>
+                <h5 class="card-title fw-bold">★ 4.86 (28)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                경주 포레스트 팬션 101호/감상팬션/야외자쿠지/불멍</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img
+                src="https://a0.muscache.com/im/pictures/miso/Hosting-631554907583106545/original/6112a585-4876-4c97-af7f-7cbcb0b6738d.jpeg?im_w=2560"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">가평군의 텐트</h5>
+                <h5 class="card-title fw-bold">★ 4.87 (60)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                글램핑G2동-불멍과 단독바베큐장, 개인샤워실이 있는 프리미엄 글램핑입니다</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <div class="position-relative">
+              <img src="https://a0.muscache.com/im/pictures/2d6fbbe0-558f-4ba7-8b93-e3a0dc117ec0.jpg?im_w=1200"
+                class="w-100 h-50 rounded-2" alt="...">
+              <div class="position-absolute border-1 bg-secondary-subtle p-1 rounded-1 fw-bold"
+                style="top: 10px; left: 10px; font-size: 14px">슈퍼호스트</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">속초시의 별채</h5>
+                <h5 class="card-title fw-bold">★ 4.93 (324)</h5>
+              </div>
+              <p class="card-text overflow-hidden text-secondary"
+                style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                해[海]요일/바다 보는 날/바다위에 누워 휴식/휴식이 필요한 날/</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-start">
+            <button type="button" class="btn btn-outline-dark fw-bold">모두 보기 > </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-5">
+        <a class="text-black fw-bold" href="">에어비앤비</a>
+        <span> > 한국</span>
+      </div>
+
+  </main>
+
+  <footer class="container border-top border-1 d-flex justify-content-between py-3">
+    <div class="text-secondary" style="font-size: 14px;">©2023 Airbnb, Inc.All rights reserved • 개인정보 처리방침 • 이용약관 • 여행자
+      찾기
+      • 오창인 • 장하늬 • 정소담</div>
+    <div>
+      <span><img src="img/facebook.svg" class="me-3" alt=""></span>
+      <span><img src="img/twitter.svg" class="me-3" alt=""></span>
+      <span><img src="img/instagram.svg" alt=""></span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+  <script>
+    $(function () {
+      $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose: true,
+        todayHighlight: true,
+      });
+    });
+
+    $(document).ready(function () {
+      $('.form-floating input').on('focusin', function () {
+        $(this).attr('placeholder', $(this).siblings('label').text());
+      });
+      $('.form-floating input').on('focusout', function () {
+        $(this).attr('placeholder', '');
+      });
+    });
+
+  </script>
+</body>
+
+</html>
