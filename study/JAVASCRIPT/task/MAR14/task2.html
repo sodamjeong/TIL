@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="original" class="container">
+    <div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">이메일</label>
+        <input type="email" class="form-control" id="inputEmail">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">비밀번호</label>
+        <input type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" role="submit">로그인</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy" class="container">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+  
+  // 박스 생성
+  const divTag = document.createElement('div')
+
+  // 이메일 입력 칸 생성
+  const divTag1 = document.createElement('div')
+  divTag1.classList.add('mb-3')
+  const labelEmail = document.createElement('label')
+  labelEmail.setAttribute('for','inputEmail')
+  labelEmail.classList.add('form-label')
+  labelEmail.textContent = '이메일'
+  const inputEmail = document.createElement('input')
+  inputEmail.setAttribute('type','email')
+  inputEmail.classList.add('form-control')
+  inputEmail.setAttribute('id','inputEmail')
+  divTag1.append(labelEmail, inputEmail)
+  
+  // 비밀번호 입력 칸 생성
+  const divTag2 = document.createElement('div')
+  divTag2.classList.add('mb-3')
+  const labelPassword = document.createElement('label')
+  labelPassword.setAttribute('for','inputPassword')
+  labelPassword.classList.add('form-label')
+  labelPassword.textContent = '비밀번호'
+  const inputPassword = document.createElement('input')
+  inputPassword.setAttribute('type','password')
+  inputPassword.classList.add('form-control')
+  inputPassword.setAttribute('id','inputPassword')
+  divTag2.append(labelPassword, inputPassword)
+  
+
+  // 로그인 버튼 생성
+  const divTag3 = document.createElement('div')
+  divTag3.classList.add('mb-3')
+  const logBtn = document.createElement('button')
+  logBtn.classList.add('btn', 'btn-primary')
+  logBtn.setAttribute('role','submit')
+  logBtn.textContent = '로그인'
+  divTag3.appendChild(logBtn)
+
+  // 생성된 박스들 순서대로 박스에 넣기
+  divTag.append(divTag1, divTag2, divTag3)
+
+  // copy 박스에 추가
+  const copyTag = document.querySelector('#copy')
+  copyTag.appendChild(divTag)
+
+
+
+</script>
+
+</html>

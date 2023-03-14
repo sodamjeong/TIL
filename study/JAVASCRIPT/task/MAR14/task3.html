@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="original" class="container">
+    <div id="card" class="card w-25">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sir_Tim_Berners-Lee.jpg/540px-Sir_Tim_Berners-Lee.jpg"
+        class="card-img-top">
+      <h4 class="card-header fw-bolder">
+        팀 버너스리
+      </h4>
+      <div class="card-body">
+        <p class="card-text">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">국적 - 영국</li>
+        <li class="list-group-item">생년월일 - 1955년 6월 8일</li>
+        <li class="list-group-item">직업 - 전산과학자, 프로그래머, 교수</li>
+        <li class="list-group-item">출신 대학 - 옥스퍼드 대학교 물리학 학사</li>
+      </ul>
+      <div class="card-footer text-end">
+        <a href="https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC" class="card-link">
+          추가 정보
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy" class="container">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+
+  // card box 생성
+  const cardTag = document.createElement('div')
+  cardTag.classList.add('card', 'w-25')
+  cardTag.setAttribute('id','card')
+
+  // img 생성
+  const imgTag = document.createElement('img')
+  imgTag.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sir_Tim_Berners-Lee.jpg/540px-Sir_Tim_Berners-Lee.jpg')
+  imgTag.classList.add('card-img-top')
+
+  // header 생성
+  const headTag = document.createElement('h4')
+  headTag.classList.add('card-header', 'fw-bolder')
+  headTag.textContent = '팀 버너스리'
+  
+  // card body 생성
+  const cardBody = document.createElement('div')
+  cardBody.classList.add('card-body')
+  const cardText = document.createElement('p')
+  cardText.classList.add('card-text')
+  cardText.textContent = '1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지'
+  cardBody.appendChild(cardText)
+
+  // 리스트 생성
+  const cardList = document.createElement('ul')
+  cardList.classList.add('list-group', 'list-group-flush')
+  const listBody1 = document.createElement('li')
+  listBody1.classList.add('list-group-item')
+  listBody1.textContent = '국적 - 영국'
+  const listBody2 = document.createElement('li')
+  listBody2.classList.add('list-group-item')
+  listBody2.textContent = '생년월일 - 1955년 6월 8일'
+  const listBody3 = document.createElement('li')
+  listBody3.classList.add('list-group-item')
+  listBody3.textContent = '직업 - 전산과학자, 프로그래머, 교수'
+  const listBody4 = document.createElement('li')
+  listBody4.classList.add('list-group-item')
+  listBody4.textContent = '출신 대학 - 옥스퍼드 대학교 물리학 학사'
+
+  cardList.append(listBody1, listBody2, listBody3, listBody4)
+  
+  // footer 생성
+  const footerTag = document.createElement('div')
+  footerTag.classList.add('card-footer', 'text-end')
+  const aTag = document.createElement('a')
+  aTag.setAttribute('href', 'https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC')
+  aTag.classList.add('card-link')
+  aTag.textContent = '추가 정보'
+  footerTag.appendChild(aTag)
+
+  // card에 요소 넣기
+  cardTag.append(imgTag, headTag, cardBody, cardList, footerTag)
+
+  // copy 박스에 추가
+  const copyTag = document.querySelector('#copy')
+  copyTag.appendChild(cardTag)
+
+</script>
+
+</html>
