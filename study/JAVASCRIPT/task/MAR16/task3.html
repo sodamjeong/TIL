@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Event</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5 d-flex flex-column justify-content-center align-items-center">
+    <div class="mb-3 input-group-lg">
+      <label for="inputPassword" class="form-label">비밀번호</label>
+      <input type="password" class="form-control" id="inputPassword">
+      <div class="form-text" id="feedbackPassword"></div>
+    </div>
+    <div class="mb-3 input-group-lg">
+      <label for="inputRePassword" class="form-label">비밀번호 확인</label>
+      <input type="password" class="form-control" id="inputRePassword">
+      <div class="form-text" id="feedbackRePassword"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  /*
+  1. 비밀번호 입력 요소의 유효성 검사
+  1-1. id가 inputPassword인 요소에 'input'에 대한 EventListener 설정
+  1-2. 이벤트 타겟의 value의 유효성 검사(비밀번호의 길이가 8 이상 16 이하면 유효성 검사 통과)
+  1-3. 검사 통과 여부에 따라 id가 feedbackPassword인 요소의 텍스트 수정
+  1-3-1. 검사 통과 시 "유효한 비밀번호입니다."
+  1-3-2. 검사 불통과 시 "유효하지 않은 비밀번호입니다."
+  */
+
+  const inputTag = document.querySelector('#inputPassword')
+  const feedBack = document.querySelector('#feedbackPassword')
+
+  inputTag.addEventListener('input', (event) => {
+    const password = event.target.value
+    if (inputTag.value.trim()) {
+        if (password.length >= 8 && password.length <= 16) {
+            feedBack.textContent = '유효한 비밀번호입니다.'
+    } else {feedBack.textContent = '유효하지 않은 비밀번호입니다.'}
+    } else {feedBack.textContent = ''}
+})
+    
+  /*
+  2. 비밀번호 확인 입력 요소의 유효성 검사
+  2-1. id가 inputRePassword인 요소에 'input'에 대한 EventListener 설정
+  2-2. 이벤트 타겟의 value의 유효성 검사(비밀번호 입력 요소와 동일한 값이면 유효성 검사 통과)
+  2-3. 검사 통과 여부에 따라 id가 feedbackRePassword안 요소의 텍스트 수정
+  2-3-1. 검사 통과 시 "동일한 비밀번호입니다."
+  2-3-2. 검사 불통과 시 "동일하지 않은 비밀번호입니다."
+  */
+
+  const inputTag2 = document.querySelector('#inputRePassword')
+  const feedBack2 = document.querySelector('#feedbackRePassword')
+
+  inputTag2.addEventListener('input', (event) => {
+    const password2 = event.target.value
+    if (inputTag.value.length === 0) {
+        inputTag2.value = ''
+        alert('비밀번호를 입력해주세요.')
+    }
+
+    if (inputTag2.value.trim()) {
+        if (inputTag.value === password2) {
+            feedBack2.textContent = '동일한 비밀번호입니다.'
+    } else {feedBack2.textContent = '동일하지 않은 비밀번호입니다.'}
+    } else {feedBack2.textContent = ''}
+})
+
+  /*
+  3. 추가 비밀번호 유효성 검사 시스템 개발
+  */
+
+  // 각 항목에 input 값이 있다가 없을 때 피드백 값이 없도록 설정함.
+  // 비밀번호 입력 칸에 입력 값이 없는데 비밀번호 확인 칸에 입력 할 경우 알림창이 뜨고 입력이 안되도록 함.
+
+
+    // 비밀번호 영문 숫자 특수문자 조합 체크 조건 추가.
+    regId = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/
+   
+    inputTag.addEventListener('blur', () => {
+        if (inputTag.value.length > 0) {
+            if (!regId.test(inputTag.value)) {
+            inputTag.value = ''
+            alert('영문+숫자+특수기호 8자리 이상 16자리 이하로 구성하여야 합니다.   사용가능한 특수기호는 "@$!%*#?&" 입니다.')
+        }}
+    })
+</script>
+
+</html>
