@@ -41,3 +41,9 @@
 링크 ctrl + 클릭 시, 로켓 발사 화면 확인됨.
 9. 서버 종료
 : ctrl + c
+
+### 앱 생성
+1. python manage.py startapp (articles) 
+  - 앱의 이름은 '복수형'으로 지정하는 것을 권장
+2. settings.py 파일 INSTALLED_APPS = ['앱 이름' 추가]
+  - 앱을 생성한 후에 등록 해야 함, 등록 후 생성 불가능

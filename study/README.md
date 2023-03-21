@@ -47,3 +47,9 @@
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ## JAVASCRIPT
+
+## Django
+
+[About_server](./DJANGO/About_server.md)<br>
+[Django_guid](./DJANGO/Django_guid.md)<br>
+[Django_design_pattern](./DJANGO/Django_designpattern.md)<br>
