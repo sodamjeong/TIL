@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="text-center bg-info bg-opacity-10">
+    <div class="card m-auto mt-5" style="width: 25rem;">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sir_Tim_Berners-Lee.jpg/1200px-Sir_Tim_Berners-Lee.jpg" class="d-block w-100 rounded-1" style="height: 240px;" alt="버너스리1">
+              </div>
+              <div class="carousel-item">
+                <img src="https://ichef.bbci.co.uk/news/640/cpsprodpb/F24C/production/_105982026_tbl1c.jpg" class="d-block w-100 rounded-1" style="height: 240px;" alt="버너스리2">
+              </div>
+              <div class="carousel-item">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEBAPDw8QDw4ODw0PDw8PDQ8NDw4OFhEWFhUVExUYHSggGBolGxUVIzEhJSkrLi8uGB8zODMsNygtLisBCgoKDg0OFw8QFysdHR0tLS0rLS0tLS0tKy0tKy0rLSsrKy0tLSsrLSsrLS0tKy0tLTcrKy0tLSstLSstLS0tK//AABEIALMBGgMBIgACEQEDEQH/xAAcAAADAAMBAQEAAAAAAAAAAAAAAQIEBQYDBwj/xAA7EAACAQIFAQUGBAQFBQAAAAAAAQIDEQQFEiExQSJRYXGBBjKRobHwE0LB0QcjUvGCssLD4TNDYnKi/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAIBEBAQEBAAIDAAMBAAAAAAAAAAECEQMhEjFBMkJRIv/aAAwDAQACEQMRAD8A+dIpCiikjbABoYWKJsKxdgsBFikVYLACLSEikgAaApIICkgSGgGkVYaQ0gBIpIunC/n5pGTPBtJOz3S2tuvFLqr/AFAxUgsekqMlyuBWAmw0h2GFCRSQJFJBAkFhjKEMYJBBYYDsAhWLsFhxEWE0XYTRFeTQtJ6NCsFaBFkooKYWAYQrDsMApDsMYQrFJBYYAikhIoAKSEi0gBHrp7rfsTBHvTgn0fmyW8Vk4CjGTSlvy+NvidZleCUoOErWSk+H1e+/qclRx0dSTabtul71uf3NvhcdNLsySW1ry028PDf77uGtddZhuKmR05Rtq2abi3dzik7Si11te97/ALnL47LZU72u1BuMtn0fPlZx+PibulmEtubXd1b3ej+TLpYqnPVGrG94Q4dnt8u77Rc74mvG5LS+4Z0GY4Sm4uVLVpXMJ09Eo9LxktpL7saG3jfyO0vXK+iRSENGgxoQwlMECAqKsNCTGABYBgKwmUJoiosFihERzyQxIpBswAYQikFgCmNCGghjBDQAUhWGgGkX5uxKMDN8ZoSivekm/JIlvFjZKSt1b46Wt37msxtacpfhUpSio+9O657lseGV1ZS1VG+zC1lfStVur+Z7YOspSdkt23933Zw1qu+MytvkWAj0bbbu3Le77ztcvwOpJNXjxur28u45LLJ2aV/gr/Q7vJ6iUVe74/Kzy6t692cTja4TKae3kj0xvstQqxaacZcqcHpkn08Hy+hn4RrZrdS68m2pS29BmGuf4+Z4ulicA1Cu/wAbCSemNRJNJvZRnF+6/Wz89jV5vgqaSq0b6Hyney9T63jMHTqRlCcdUZJqUZRvGS7mjg8VlKwlaNN3lh6zapSk+1CXP4c2+duG92ud079c7srzeTxSzscOM2ueZfGnLXTd6c+nWEt9vLZ/A1R7ZezrxWc9GiiRlZMBXGgikhgIEMBDKoAAATEMArnUWREtGVMaECCqENAECKRKKQAWiCkBSGJDADlsyrupVnv2U9KfgjpMTJqEmuVGX0OPw8uW+dvPqZ01lsoVGoxiuyuEr8+Y8HX01PB3MB1Ny2+0n4+pxsd83jucvfCbl0tp4+Z2WSTdltU81OL+Vz55lWJulfVqVvG6OvyuXVQk10fafntc8uo92Nene4Wctuqf9cXF356LxN5CVkuzvZW7Wxz2X0oygpaXdWv2qtNr0bsbaolGMX22k0rOXw3LErOXO7prwfP1MLNMLGrTcZKLW3D4a3M3C2fuxivCy+iHXp7W257rGrPXWZ/j5f7XUHTs4q9Os9Tv+SolZpedk/icyd97dUrYbZcV438E09/DdHAo9njvcyvm+Wc1YYCA6OakNEodgirjuShgBRIwGAhlUgAQVz8SiUUZaMLDQwBDBAEA0SUgGNCKQDQMAYEV1eMl3xl9DiofU6TGZrGM5U1G7Wzbdt2uhzm6dn0MWxuSmz11X/c8n+xUWYrpHUZTRckpJpdk6DLcW6e2pyd+FJr4HEYbETa99qO6STtfwJq0qm95yWnTfUp6Y341N8evejncddZvj7dkuex0uKn2k1ZOSfD8dzqIZhCpGUbrVJNpXW7tt87H5rwuMrUZqzkmnwz6t7I0sTjKakpKOlX3k27HPWeO+d/L7dbivaGnhe3JvdOy68dTHwn8QaVZqMact+sna3w58jksbUUnNVdU2puCjHrK+6+hqqVWi6iShVo1PxJQWmUXFyjLS1KF7q7dk3dXaXUT6LfbtPbrE3oK3u1J038NTRwqO1zqNKGATrrXVk9NC0pJKV76vHs2e5xR6vD/ABeHzT/sMBAdXFRVyUMIpMCR3AYABQDEMAAACtAhoSGjLSirCQwgAYAKwwABoolDQFIBDA5PNYNV6l+stS8mjEe50Of4e6jUXKvB+T3Xz+pzyRyvqu09xbiXQp38tzyTMvAVlGSurq++xlcs7KsPFyTemW6TjKTjx3bndYLJcPNqpUjHVZfnk91xdLZnPYKlRfahbZx1Ra5vd/p8DpsFVjHaNt9r9xy1ux6ceOX7aDOcko0nGEF11q7b0xtwr9Htt4Hb/wAJsdzTslvo56WOI9qarjUUtT2T25bMr+GeY6MXFJtNyV03s9ye7Ot5kmuPsOPyiMpRqaU1G99KWuPl4cnrl+V0U3NaJOV7t0UptbcybfcbHWoy0y2U/dfe3d2+p6VIpJvrbp5E+ls6+f8A8SIqEMPBdXUdvCy+e6OFudt/E6qm8L4Kv/tnDnq8P8I8Hmn/AHVXGTcaOjkdykyUNFRQCGECHcQAUmMi4wKEIZVaFDQkMy0pFEopBANCGADEMBggGADQgQE4mipwlB8SVr9z6M5HEUnGTjJWlB2fidiY+JwFKq05xu1tdNxbXc7GbnrWdccgiocmXmeHVOtOKVou0or/AMWv7mKjm6RuMpxEovu3W51uErJRv3X+BwFCu4v14OmwGKWm7fC3Ry3l6fFvjCzvNZfjqVtop6brnvK9nc7jDEqo4qKl3bWfeRmMYVnfZNHrk2TNN1bKWjS1Fq93q3+Rrk4z8r8vT7Dg85q5hhJRop6oJWq2ajCUWnGzfvO6tZeJsfZ/OKk4ypVrqtT7Movv70+595j5Fm9OFBbpKKv0Tvbix5VsfRruNek4qpTqRpVNLXahJ2V/KTXxZx09GdfjnPb6tfEU4f0UVL1lKSf+RHNXNv7X1nPGVL/ljSj/APCl/qZpkezxzmY+d5b3dUNEjNsLBEplIIdxiGUAAADAQBOHcBADjSIpEoZGlDRKKAYxAEMYhoBjJuMBgApSS5aXqBQ0Yk8dSj+a/kY1TOYriPxYXjy9pKO1Op3Nxfk91+vxNJG19+DYZhnCqQcNK3tv3NPZmsuc9OmWXOmvxYrpLTv8jYYjAVIJwUlu7vyNOqjvF9Y/vc39LHKdnLe+zfgcq6zla/C4S0rSquD8Y3O59nstSj2selFtJxWF1Llbp6lY1lDA05JOTTV143XXY7nIclwzjHVbfj+XHn0M3TtjHGbT9n8NUpOKxNaq5rb/ALSWyTb0+vU0Xsjk7w9XEU3JuEK9KK1P3lq1r/Kjv8JlFOkuxbv2jpv9/qct7S4mNKOIqwkk46I7LZVZNQh/i7X1OfvV+Ld9e643McdGvXr1Iu6daqk++MZOK+SPFM1OFnplO3u/jVlbwvc2aZ7+c9Pm299vVDITKuAykRcaYR6XGmedxpgWILgUAybjuA7gIANKhiQyARSZIAWCZKY0RVXGQO5UUY+LxsKa3d33BjcSqcHLr08zlatVybcndvciyNnWzmb93ZGDVxU3zJv1MZyJbJ1t7TqM8pSFcROgPWLPI9KZmrFyQ4VHHhhcRGm2w2btWT4Vt07PxOyyr2sUIJOTSS5vw+DgsFl8qrX5Yydk+/yR9Gyb2cw1GnGUqcZy5cqkY1H39ePQ5b+MdsXTrso9oniIWjdxS0ua4/wvqzlPbrMYOdHCU0owhJ4iqo7K6T038btv0Rm5hnUaNOUr2Svbx8EfO8Ti51I1q8vfry0R70n/AMXL4M938vyL598zz9r1wUm4pq/blUn38u5tqT7N/D5GoobaVxZWM6jiEoyUuiXzf9j389PEzYy7ilIwqNdcX2ZlJmLng9EwuShoyKTKTIC4HqmDZCY7hDuFxAFVcLkhcDUoZKZQQAAAA7iABjJPPE1dEJS7kFafP8ReUYLiO78zUtlVajlJyfL3IZi1uEAAQAAAAVBhpEhYPY9cLp1LVsup5whfgUW+DDo3WDxblWUlF6dklbiK2O0rY60U5bpLi6scFlcnGSe/ozMzPMZNaU7epz1ntdM65OqzjMZV56F7qdn4s8cUu1TprimtT/8AZ/fzJyylZub4ir7hh3rk5v8AM7+S6fI9mMfHPHm1r5a6yo7I8K9XsNr87b9Fx9EViaiS2feeNdWgl3RX39DdZeirXUe5xj6fdjZYTE8X6cP0NJh5dm33yZNGQlWt+qlz0TNZRrtLn9jOo1U+Rc9R7XEhDTOdnBSKITHcCrhcm4XCKuFybiuFaxDuSAFCEMAuMkAcUYWcTtSl47GXc1GfVtow9WSkjTAAGWyAAIAqKJADJnGy8WKjQ1S0rmw8OtWzfHBk4VunNS2fR88HSzs7En37emW0P5kovomY1enaTXibvL4KVVzTW6aV+p44nDLVJvnozzu/I86EFGF3srbsxYx/EldLr6inK+y4+pmYOjtfhnfxeP8Aa4+Tf5F1uxTcVzK0Uvm/kiKKS+FyM1q9uC/pjqfm3/wRVrx0t2e9uFtf9Drb7Yk9Jq1LvwuvqemId7rxa+CsYkJSb2jZXT38zInLdvxZjrTHw8+DLUtzXUnv5NmZCQlGfTmZVGpY10ZbmRr2sdJWW0hWuv1vax7wlf75MCD249ODIhLbnZ2fmhZ0ZIEKafXdfP72HqOVnEVcLkag1AXcWojUGoKwUAAFAAAAxAAAc5mz/myADNIwwACNEMQEAAAA4sz6bvFN7sAOnj+2aycHJpqz+7nrmNR6Ur7bABx/s6/1eFCKNngkAHsy8+muzP8A6svDSl5aUYk5NS2/pTADlr7bn0ye8jowADDp+8/U9nJ3XmvqAGYrKfJkX49BAbiVmxe8fFf6W/0PWu90umz9QA2j2p+8vL9D3ADG0JiuAGVDFcACv//Z" class="d-block w-100 rounded-1" style="height: 240px;" alt="버너스리3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="card-body bg-secondary bg-opacity-75 bg-gradient">
+          <h4 class="card-title text-white">팀 버너스리</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action list-group-item-dark">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark">국적 - 영국</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark">생년월일 - 1955년 6월 8일</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark">직업 - 전산과학자, 프로그래머, 교수</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark">출신 대학 - 옥스퍼드 대학교 물리학 학사</li>
+        </ul>
+        <div class="card-body text-end bg-secondary bg-opacity-75 bg-gradient" >
+          <a href="https://ko.wikipedia.org/wiki/팀버너스리" class="card-link text-white">추가 정보</a>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
