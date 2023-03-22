@@ -22,6 +22,6 @@ urlpatterns = [
     path('today-dinner/', views.dinner),
     path('throw/', views.throw),
     path('catch/', views.catch),
-    path('lotto_create/', views.lotto),
-    path('lotto_number/', views.number),
+    path('lotto-create/', views.lotto_create),
+    path('lotto/', views.lotto),
     ]

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container m-5">
+  <form action="/lotto/" method="GET" class="row g-3 mt-5">
+    <div class="col-4"></div>
+    <div class="col-3">
+      <input type="number" name="count" class="form-control" placeholder="게임 수를 숫자로 입력해주세요." min = '0'>
+    </div>
+    <div class="col-1">
+      <input type="submit" class="btn btn-outline-primary" value="생성">
+    </div>
+  </form>
+</div>
+{% endblock content %}

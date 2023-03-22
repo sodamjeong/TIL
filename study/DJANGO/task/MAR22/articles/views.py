@@ -36,10 +36,10 @@ def catch(request):
 
 ## task 3
 
-def lotto(request):
-    return render(request, 'lotto.html')
+def lotto_create(request):
+    return render(request, 'lotto_create.html')
 
-def number(request):
+def lotto(request):
 
     num = request.GET.get('count')
     lst = []
@@ -51,4 +51,4 @@ def number(request):
         'num' : num,
         'lst' : lst,
     }
-    return render(request, 'number.html', context)
+    return render(request, 'lotto.html', context)
