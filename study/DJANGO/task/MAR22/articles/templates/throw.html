@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container m-5">
+  <form action="/catch/" method="GET" class="row g-3 mt-5">
+    <div class="col-4"></div>
+    <div class="col-3">
+      <input type="text" name="content" class="form-control">
+    </div>
+    <div class="col-1">
+      <input type="submit" class="btn btn-outline-primary" value="Throw">
+    </div>
+  </form>
+</div>
+{% endblock content %}
