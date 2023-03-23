@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    font-family: 'TTTtangsbudaejjigaeB'
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+  <h1 class="text-center mt-5">{{ number }}</h1>
+  <h1 class="text-center">출력 완료.</h1>
+  <form action="/articles/" method="GET" class="row g-3 mt-2">
+    <input type="submit" class="btn btn-outline-secondary w-50 mx-auto" value="뒤로가기">
+  </form>
+{% endblock content %}

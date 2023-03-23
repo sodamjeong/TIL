@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    font-family: 'TTTtangsbudaejjigaeB';
+}
+
+a {
+    text-decoration-line: none;
+    color: gray;
+    font-size: 20px;
+    margin-right: 15px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+<div class="container m-5 text-center">
+  <h1>출력 Program</h1>
+  <a href="{% url 'articles:throw' %}">문자열 출력</a><Br>
+  <a href="/articles/number-print/1/">1 출력</a>
+  <a href="/articles/number-print/2/">2 출력</a>
+  <a href="/articles/number-print/3/">3 출력</a>
+  <a href="/articles/number-print/1000/">1000 출력</a>
+  <h4 class="mt-5 text-secondary">URL에 number-print/숫자 추가 입력시 출력 가능합니다.</h4>
+  <form action="http://127.0.0.1:8000/" method="GET" class="row g-3 mt-2">
+    <input type="submit" class="btn btn-outline-danger w-50 mx-auto" value="뒤로가기">
+  </form>
+</div>
+{% endblock content %}

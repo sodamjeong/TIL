@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    font-family: 'TTTtangsbudaejjigaeB';
+}
+
+a {
+    text-decoration-line: none;
+    color: gray;
+    font-size: 20px;
+    margin-right: 15px;
+}
+form {
+    width : 100%;
+}
+
+.box {
+    width : 150px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+
+
+<div class="container m-5 text-center">
+  <h1>연산 Program</h1>
+  <form action="/calculates/calculate-plus/" method="GET" class="row g-3 mt-5">
+    <input type="number" name="num1" class="form-control box ms-auto" placeholder="숫자 입력.">
+    <input type="number" name="num2" class="form-control box mx-2" placeholder="숫자 입력.">
+    <input type="submit" class="btn btn-outline-primary box me-auto" value="더하기">
+  </form>
+  <form action="/calculates/calculate-minus/" method="GET" class="row g-3 mt-3">
+    <input type="number" name="num1" class="form-control box ms-auto" placeholder="숫자 입력.">
+    <input type="number" name="num2" class="form-control box mx-2" placeholder="숫자 입력.">
+    <input type="submit" class="btn btn-outline-danger box me-auto" value="빼기">
+  </form> 
+  <form action="/calculates/calculate-multi/" method="GET" class="row g-3 mt-3">
+    <input type="number" name="num1" class="form-control box ms-auto" placeholder="숫자 입력.">
+    <input type="number" name="num2" class="form-control box mx-2" placeholder="숫자 입력.">
+    <input type="submit" class="btn btn-outline-warning box me-auto" value="곱하기">
+  </form>
+  <form action="/calculates/calculate-div/" method="GET" class="row g-3 mt-3">
+    <input type="number" name="num1" class="form-control box ms-auto" placeholder="숫자 입력.">
+    <input type="number" name="num2" class="form-control box mx-2" placeholder="숫자 입력.">
+    <input type="submit" class="btn btn-outline-success box me-auto" value="몫">
+  </form>
+  <h4 class="mt-5 text-secondary">URL에 calculate/숫자1/숫자2 추가 입력시 동시 연산이 가능합니다.</h4>
+  <form action="http://127.0.0.1:8000/" method="GET" class="row g-3 mt-2">
+    <input type="submit" class="btn btn-outline-danger w-50 mx-auto" value="뒤로가기">
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+* {
+    font-family: 'TTTtangsbudaejjigaeB'
+}
+
+a {
+    text-decoration-line: none;
+    color: gray;
+    font-size: 20px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+<div class="container m-5 text-center">
+  <h1>Main</h1>
+  <a href="/articles/">출력 Program</a><br>
+  <a href="/calculates/">연산 Program</a>
+</div>
+{% endblock content %}
