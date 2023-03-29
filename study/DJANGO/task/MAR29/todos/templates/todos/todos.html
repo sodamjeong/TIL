@@ -1,0 +1,39 @@
+{% extends 'todos/base.html' %}
+
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'KCC-Ganpan';
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+    font-size: 20px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+<div class="container text-center m-5">
+    <h1 class ='mb-3 col'>Todo List  
+    <a style="color:pink;" href="{% url 'todos:create' %}">추가</a></h1>
+{% for todo in  todos %}
+  <div class = "border border-warning-subtle rounded-3 mb-3 p-4 w-50 mx-auto shadow text-start">
+    <a href="{% url 'todos:todocontent' todo.pk %}"> 
+    <h4>Todo : {{todo.title}} </h4>
+    <h5>Explanation : {{todo.content}} </h5>
+    <p>Importance : {{ todo.priority }} </p>
+  </div>    
+{% endfor %}
+</div>
+{% endblock content %}
+

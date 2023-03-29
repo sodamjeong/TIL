@@ -1,0 +1,60 @@
+{% extends 'todos/base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'KCC-Ganpan';
+}
+
+a {
+    text-decoration-line: none;
+    color: pink;
+    font-size: 20px;
+}
+</style>
+
+{% endblock style %}
+
+
+{% block content %}
+<div class="container m-5 text-center">
+  <h1>Todo 추가</h1>
+  <div class="mx-auto text-start w-50">
+    <form action="{% url 'todos:success' %}" method="GET">
+        {% csrf_token %}
+        <div class= "mb-3">
+            <label for="title">Todo</label>
+            <input type="text" class="form-control" name="title" id='title'>
+        </div>
+        <div>
+            <label for="content">Explanation</label>
+            <textarea name="content" class="form-control" id="content" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="priority">Importance</label>
+            <input type="text" class="form-control" name="priority" id='priority'>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" name="completed">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+                completed
+            </label>
+        </div>
+        <div>
+            <label for="deadline">Deadline</label>
+            <input type="date" class="form-control" name="deadline" id='deadline'>
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center;">
+        <input class="btn" style="color:pink; font-size:30px;" type="submit" value="Save">
+        <a href="{% url 'todos:todo' %}" style="font-size:30px;">Back</a>
+        </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

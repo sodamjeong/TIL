@@ -1,0 +1,42 @@
+{% extends 'todos/base.html' %}
+
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'KCC-Ganpan';
+}
+
+a {
+    text-decoration-line: none;
+    color: pink;
+    font-size: 20px;
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+<div class="container m-5 p-2">
+    <div class="text-start ms-5">
+    <h1>Todo</h1>
+    <p>Number: {{ todo.pk }}</p>
+    <p>Todo: {{ todo.title }}</p>
+    <p>Explanation: {{ todo.content }}</p>
+    <p>completed : {{ todo.comleted }}</p>
+    <p>Importance: {{ todo.priority }}</p>
+    <p>Created: {{ todo.created_at }}</p>
+    <p>Deadline: {{ todo.deadline }}</p>
+    <a href="{% url 'todos:edit' todo.pk %}" class = "me-2">Edit</a>
+    <a href="{% url 'todos:remove' todo.pk %}" class = "me-2">Delete</a>
+    <a href="{% url 'todos:todo' %}">Back</a>
+   </div>
+</div>
+{% endblock content %}
+
