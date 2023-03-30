@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article
+
 
 # Create your views here.
 
@@ -24,8 +25,8 @@ def new(request):
 def create(request):
     # new에서 보낸 사용자 데이터를 받아서 변수에 할당
     # print(request.GET)
-    title = request.GET.get('title')
-    content = request.GET.get('content')
+    title = request.POST['title']
+    content = request.POST['content']
 
     # 받은 데이터를 DB에 저장
     # 1
@@ -43,4 +44,35 @@ def create(request):
     # Article.objects.create(title=title, content=content)
 
     # 결과 페이지 반환
-    return render(request, 'articles/create.html')
+    # return render(request, 'articles/create.html')
+
+
+    # 이동 URL 반환
+    # return redirect("articles:index")
+
+    # 생성한 글의 단일 조회(Detail) 주소
+    return redirect("articles:detail", article.pk)
+
+def delete(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.delete()
+    return redirect("articles:index")
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {
+        'article': article,
+    }
+
+    return render(request,'articles/edit.html', context) 
+
+def update(request, pk):
+    article = Article.objects.get(pk=pk)
+    title = request.POST['title']
+    content = request.POST['content']
+
+    article.title = title
+    article.content = content
+    article.save()
+    
+    return redirect("articles:detail", article.pk)
