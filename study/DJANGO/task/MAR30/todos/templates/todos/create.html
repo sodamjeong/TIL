@@ -1,0 +1,72 @@
+{% extends 'todos/base.html' %}
+
+{% block style %}
+<style>
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'KCC-Ganpan';
+}
+
+a {
+    text-decoration-line: none;
+    color: pink;
+    font-size: 20px;
+}
+</style>
+
+{% endblock style %}
+
+
+{% block content %}
+<div class="container m-5 text-center">
+  <h1>Todo 추가</h1>
+  <div class="mx-auto text-start w-50">
+    <form action="{% url 'todos:success' %}" method="POST">
+        {% csrf_token %}
+        <div class= "mb-3">
+            <label for="title">Todo</label>
+            <input type="text" class="form-control" name="title" id='title'>
+        </div>
+        <div class= "mb-3">
+            <label for="content">Explanation</label>
+            <textarea name="content" class="form-control" id="content" cols="30" rows="5"></textarea>
+        </div>
+        <div class= "mb-3">
+            <label for="priority">Importance</label>
+            <input type="Number" class="form-control" name="priority" id='priority' min = "0" value="3">
+        </div>
+        <div class= "mb-3">
+            <label for="completed">completed</label>
+            <input type="checkbox" name="completed" id='completed'>
+        </div>
+        <div class= "mb-3">
+            <label for="deadline">Deadline</label>
+            <input type="date" class="form-control" name="deadline" id='deadline' onchange="validateDeadline()" required>
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center;">
+        <input class="btn" style="color:pink; font-size:30px;" type="submit" id='submit-button' value="Save">
+        <a href="{% url 'todos:todo' %}" style="font-size:30px;">Back</a>
+        </div>
+    </form>
+  </div>
+</div>
+
+<script>
+    function validateDeadline() {
+        const deadlineInput = document.getElementsByName('deadline')[0];
+        const submitButton = document.getElementById('submit-button');
+    
+        // deadline 값이 유효하지 않으면
+        if (!Date.parse(deadlineInput.value)) {
+            submitButton.disabled = true; // 저장 버튼 비활성화
+        } else {
+            submitButton.disabled = false; // 저장 버튼 활성화
+        }
+    }
+</script>
+{% endblock content %}
