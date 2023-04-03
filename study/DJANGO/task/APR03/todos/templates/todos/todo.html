@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'todos/style.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="container text-center m-5">
+    <h1 class ='mb-3'>Todo List  
+    <a class="todo_add" href="{% url 'todos:create' %}">추가</a></h1>
+{% for todo in  todos %}
+  <div class = "todo_content">
+    <a href="{% url 'todos:detail' todo.pk %}"> 
+      {% if todo.deadline  %}{% endif %}
+    <h3>{{ todo.deadline|timeuntil }} 남았습니다 :)</h3>
+    <h4>Todo : {{todo.title}} </h4>
+    <h5>Explanation : {{todo.content}} </h5>
+
+
+    <label for="completed">completed</label>
+    <input type="checkbox" name="completed" id="completed" 
+    style='zoom:1.5;' {% if todo.completed %}checked{% endif %} disabled>
+    </a>
+  </div>    
+{% endfor %}
+</div>
+{% endblock content %}
+

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'todos/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="container m-5 p-2 fs-2">
+    <div class="text-start ms-5">
+    <h1>Todo</h1>
+    <p>Number: {{ todo.pk }}</p>
+    <p>Todo: {{ todo.title }}</p>
+    <p>Explanation: {{ todo.content }}</p>
+
+    {% if todo.imgfile %}
+    <div class="img_border">
+      <img src="{{ todo.imgfile.url }}" alt="" class="img">
+    </div>
+    {% endif %}
+
+    <label for="completed" class= "my-3">completed</label>
+    <input type="checkbox" name="completed" id="completed" 
+    style='zoom:1.5;' {% if todo.completed %}checked{% endif %} disabled>
+
+    <p>Importance: {{ todo.priority }}</p>
+    <p>Created: {{ todo.created_at }}</p>
+    <p>Deadline: {{ todo.deadline }}</p>
+    <a href="{% url 'todos:edit' todo.pk %}" class="btn btn_style">Edit</a>
+    <a href="{% url 'todos:delete' todo.pk %}" class="btn btn_style" onclick="return confirm('정말 삭제하시겠습니까?')">Delete</a>
+    <a href="{% url 'todos:todo' %}" class="btn btn_style">Back</a>
+   </div>
+</div>
+{% endblock content %}

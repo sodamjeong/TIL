@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'todos/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="container m-5 text-center">
+    <h1>Todo 수정</h1>
+    <div class="mx-auto text-start w-50">
+      <form action="{% url 'todos:edit' todo.pk %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div style="display: flex;justify-content: center;align-items: center;">
+          <input class="btn btn_style" type="submit" id='submit-button' value="Save">
+          <a href="{% url 'todos:detail' todo.pk %}" class="btn btn_style">Back</a>
+          </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
