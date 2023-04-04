@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Dovemayo-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Dovemayo-Medium';
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgba(248, 244, 255, 0.912);
+}
+
+.dairy_header {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dairy_content {
+    width: 40%;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(201, 186, 244);
+    border-radius: 10px;
+    background-color: rgb(254, 251, 255);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dairy_content__txt{
+    width: 100%;
+    text-align: start;
+    padding: 10px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.img_border {
+    border: 2px rgb(201, 186, 244) solid;
+    width: 210px;
+    height: 210px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3px;
+}
+
+.img_box {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_style {
+    color: rgb(201, 186, 244);
+    font-size: 30px;    
+}
+
+.btn_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.write_box{
+    width: 80%;
+    display: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.write_box__form{
+    text-align: start;
+    width: 40%;
+    margin: auto;
+}
+
+.dairy_page {
+    width: 60%;
+    display: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.dairy_page__content {
+    width: 55%;
+    margin: auto;
+}

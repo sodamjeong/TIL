@@ -12,7 +12,6 @@
 {% for todo in  todos %}
   <div class = "todo_content">
     <a href="{% url 'todos:detail' todo.pk %}"> 
-      {% if todo.deadline  %}{% endif %}
     <h3>{{ todo.deadline|timeuntil }} 남았습니다 :)</h3>
     <h4>Todo : {{todo.title}} </h4>
     <h5>Explanation : {{todo.content}} </h5>

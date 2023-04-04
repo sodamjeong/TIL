@@ -21,12 +21,9 @@ def detail(request,pk):
 
 def create(request):
     if request.method == 'POST':
-        form = TodoForm(request.POST)
+        form = TodoForm(request.POST, request.FILES)
         if form.is_valid():
-            todo = form.save(commit=False)
-            if request.POST.get('imgfile',True):
-                todo.imgfile = request.FILES['imgfile']
-            todo.save()
+            todo = form.save()
             return redirect('todos:detail', todo.pk)
     else:
         form = TodoForm()

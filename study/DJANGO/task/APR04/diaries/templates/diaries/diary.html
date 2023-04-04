@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/diary.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="container">
+    <div class="dairy_header">
+    <h1>Diary</h1>
+    <a class="btn btn_style" href="{% url 'diaries:write' %}">일기쓰기</a></h1>
+    </div>
+    <form action="{% url 'diaries:diary' %}" method="get" class="text-center">
+        <label for="year">Year:</label>
+        <select name="year" id="year">
+            <option value="">Select year</option>
+            {% for year in years %}
+              {% if year == selected_year %}
+                <option value="{{ year }}" selected>{{ year }}년</option>
+              {% else %}
+                <option value="{{ year }}">{{ year }}년</option>
+              {% endif %}
+            {% endfor %}
+        </select>
+        <label for="month">Month:</label>
+        <select name="month" id="month">
+            <option value="">Select month</option>
+            {% for month in months %}
+                <option value="{{ month }}"> {{ month }}월</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn_style">Filter</button>
+    </form>
+
+    {% for diary in diaries %}
+        <div class="dairy_content">
+            <div class="dairy_content__txt">
+                <a href="{% url 'diaries:diarypage' diary.pk %}">
+                    <h4>{{ diary.record_date|date:'m/d' }}♥</h4>
+                    <h4>{{ diary.title }}</h4>
+                </a>
+            </div>
+        </div>
+    {% empty %}
+    <div class="dairy_content">
+      <h4>♡기록이 없습니다♡<h4>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

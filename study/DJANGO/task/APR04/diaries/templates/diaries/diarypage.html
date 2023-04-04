@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/diary.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="dairy_page">
+  <h1> {{diary.record_date|date:'Y/m/d'}}의 기록</h1>
+  <h3> {{diary.title}} </h3>
+
+  {% if diary.imgfile %}
+  <div class='img_box'>
+    <div class="img_border">
+        <img src="{{ diary.imgfile.url }}" alt="" class="img">
+    </div>
+  </div>
+  {% endif %}
+  <h4 class="dairy_page__content">{{diary.content}}</h4>
+
+  <a href="{% url 'diaries:edit' diary.pk %}" class="btn btn_style">수정</a>
+  <a href="{% url 'diaries:delete' diary.pk %}" class="btn btn_style" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
+  <a href="{% url 'diaries:diary' %}" class="btn btn_style">뒤로가기</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+<header class="center">
+    <div class="main_title">
+        <h1>{{ user }}님의 Menu</h1>
+        <div class = "login_box">
+            <a href="{% url 'accounts:login' %}" class = "btn btn_style ">Login</a>
+            <form action="{% url 'accounts:logout' %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Logout" class = "btn btn_style ">
+            </form>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="center">
+        <a href="/diaries/">Diary</a>
+    </div>
+</div>
+
+{% endblock content %}
