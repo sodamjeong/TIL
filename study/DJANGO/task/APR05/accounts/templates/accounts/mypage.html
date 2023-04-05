@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/accounts.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<div class="box">
+    <div class="title">
+        <h1>마이페이지</h1>
+    </div>
+    <div class="login_input">
+        <p>아이디 : {{ user.username }}</p>
+        <p>이메일 : {{ user.email }}</p>
+        <p>이름 : {{ user.first_name}}</p>
+        <a href="{% url 'accounts:update' %}" class="btn btn_style">Update</a>
+        <a href="{% url 'main' %}" class="btn btn_style">Back</a>
+    </div>
+</div>
+
+{% endblock content %}

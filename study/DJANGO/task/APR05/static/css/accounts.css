@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: 700;
+}
+
+body {
+    background-color: rgba(255, 244, 228, 0.907);
+}
+
+.box {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    font-size: 50px;
+    color: rgba(57, 57, 57, 0.807);
+}
+
+.login_input{
+    text-align: center;
+}
+
+.join_input{
+    margin: auto;
+    text-align: center;
+}
+
+.update_input{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.btn_style {
+    color: rgba(62, 62, 62, 0.744);
+    font-size: 30px;    
+}
+

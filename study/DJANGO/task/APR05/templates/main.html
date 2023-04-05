@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div class='title'>
+    <h1>안녕하세요, {{ user }} 님:)</h1>
+</div>
+<div class='mypage'>
+    <a href="{% url 'accounts:mypage' user.pk %}">My Page</a>
+</div>
+<div class='btn_box'>
+    <form action="{% url 'accounts:logout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="로그아웃" class="btn btn_style">
+    </form>
+    <form action="{% url 'accounts:withdraw' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value='회원탈퇴' class="btn btn_style" onclick="return confirm('탈퇴 시, 더 이상 서비스를 이용하실 수 없습니다.                            정말 탈퇴하시겠습니까?')">
+    </form>
+    <a href="{% url 'accounts:update' %}" class="btn btn_style">정보수정</a>
+</div>
+{% else %}
+<div class='title'>
+    <h1>안녕하세요, 방문자님!</h1>
+    <h1>로그인을 해주세요:)</h1>
+</div>
+
+<div class='btn_box'>
+    <a href="{% url 'accounts:login' %}" class="btn btn_style">로그인</a>
+    <a href="{% url 'accounts:join' %}" class="btn btn_style">회원가입</a>
+</div>
+{% endif %}
+
+{% endblock content %}
