@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="icon" href="{% static 'images/dev_favicon.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  {% block style %}
+    
+  {% endblock style %}
+</head>
+<body>
+  <div class="wrap">
+    <section>
+      {% comment %} navbar {% endcomment %}
+      <nav class="navbar sticky-top mb-2">
+        <div class="container-fluid">
+          <a class="navbar-brand align-top" href="{% url 'posts:index' %}"><img src="{% static 'images/developer.png' %}" alt="Navbar" style="width:40px; margin-left: 1rem; margin-right: 1rem;">Developer</a>
+          <div>
+            {% if request.user.is_authenticated %}
+              <p style="margin-bottom:0px;"><a href="{% url 'accounts:mypage' user.pk %}" class="ms-3 category">{{ user }}</a>님, 안녕하세요.
+                <a href="{% url 'accounts:logout' %}" class="btn btn-outline-danger btn-sm ms-3" onclick="return confirm('로그아웃 하시겠습니까?')">Logout</a>
+              </p>
+            {% else %}
+              <a href="{% url 'accounts:join' %}" class="btn btn-outline-primary btn-sm">Join</a>
+              <a href="{% url 'accounts:login' %}" class="btn btn-outline-success btn-sm">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="side_bar">
+          <div class="side_bar_title">
+            <h5> IT 정보공유 </h5>
+          </div>
+          <div class="side_bar_inner">
+            <p><a href="{% url 'posts:create' %}" class="create_article">글 작성</a></p>
+            <p><a href="{% url 'posts:index' %}" class="category">모든 글</a></p>
+            <p><a href="{% url 'posts:category' '개발' %}" class="category">개발</a></p>
+            <p><a href="{% url 'posts:category' 'CS' %}" class="category">CS</a></p>
+            <p><a href="{% url 'posts:category' '신기술' %}" class="category">신기술</a></p>
+          </div>
+        </div>
+          
+        <div class="content_main" >
+          {% block content %}
+        
+          {% endblock content %}
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <a href='https://github.com/S05p' target='_blank'>김강섭</a> |
+        <a href='https://github.com/kwonjh0825' target='_blank'>권준혁</a> |
+        <a href='https://github.com/sodamjeong' target='_blank'>정소담</a>
+      </div>
+      <p>
+        <span>KDT 풀스택 2기</span><br/>
+        <span>Copyright 2023. All Rights Reserved.</span>
+      </p>
+      </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+<script>
+  const back = () => {
+    window.history.back()
+  }
+</script>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Post List{% endblock title %}
+
+{% block content %}
+<div class="posts">
+  {% for post in posts %}
+    <p class="content_box"><a href="{% url 'posts:detail' post.pk %}" class="main_title">{{ post.title }}</a></p>
+    <p class="content_box">Post ID - {{ post.pk }} / Category - {{ post.category }} </p>
+    <hr>
+  {% endfor %}
+</div>
+{% endblock content %}

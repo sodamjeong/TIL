@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock title %}
+
+{% block content %}
+  <div class="title">
+    <h1>Welcome! {{ user.first_name }}님 :) </h1>
+  </div>
+  <div class="title">
+      <a href="{% url 'posts:index' %}" class="btn btn_style">Home</a>
+      <a href="{% url 'accounts:login' %}" class="btn btn_style">Login</a>
+  </div>
+{% endblock content %}
