@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class>
+      <div class="logo">
+        <img src="{% static 'img/logo.svg' %}" alt="logo" class="logo_img">
+      </div>
+      <div class="button_box">
+        <a href="{% url 'albums:create' %}" class="btn_style" data-bs-toggle="modal" data-bs-target="#exampleModal">Image+</a>
+        <a href="" class="btn_style">Login</a>
+        <a href="" class="btn_style">Join</a>
+      </div>
+  </header>
+  <main>
+    <div class="content_box">
+        {% for album in albums %}
+        {% if album.image %}
+        <div class = "content_item">
+            <div class="content_item_imgbox">
+              <img src="{{ album.image.url }}" alt="" class="img">
+            </div>
+            <p> {{ album.content }} </p>
+        </div>
+        {% else %}
+        <div class = "content_item">
+            <div class="content_item_imgbox">
+              <img src="{% static 'img/img_book_none.png' %}" alt="" class="img">
+            </div>
+            <p> {{ album.content }} </p>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Image 추가</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form action="{% url 'albums:create' %}" method="POST"  enctype="multipart/form-data" >
+                      {% csrf_token %}
+                      {{ form.as_p}}
+                      <div class="modal-footer">
+                          <input type="submit" value="Save" class="btn_style ms-0">
+                          <button type="button" class="btn_style me-0" data-bs-dismiss="modal">Close</button>
+                          <div style='width:150px;'></div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  </main>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
