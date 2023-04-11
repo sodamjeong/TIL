@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Join{% endblock title %}
+
+{% block content %}
+
+<div class="content">
+    <div>
+        <h1>회원가입</h1>
+    </div>
+    <div>
+        <form action="{% url 'accounts:join' %}" method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Join" class="btn btn_style">
+            <input type="submit" value="Back" class="btn btn_style" onclick="back()">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

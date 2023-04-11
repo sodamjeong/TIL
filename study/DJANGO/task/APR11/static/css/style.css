@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'MYYeongnamnu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'OTWelcomeRA';
+}
+
+/* Main */
+.page_color {
+    background-color: black;
+}
+
+.main {
+    animation-duration: 3s;
+    animation-name: slidein;
+    color: red;
+    font-size: 100px;
+    margin-top: 200px;
+    font-family: 'MYYeongnamnu';
+}
+
+@keyframes slidein {
+from {
+    margin-left: 100%;
+    width: 300%
+}
+
+to {
+    margin-left: 33%;
+    width: 100%;
+}
+}
+
+/* nav */
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+.nav_content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 10px;
+    line-height: 35px;
+    height: 70px;
+}
+
+.nav_logo {
+    padding-left: 15px;
+    padding-top: 10px;
+    line-height: 35px;
+    text-decoration: none;
+}
+
+.nav_content_btn {
+    grid-column: 5 / 6;
+    display: grid;
+    grid-template-columns: 150px 100px 100px;
+    align-items: center;
+    word-break: keep-all;
+    padding-left: 15px;
+}
+
+.my_page {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* Base */
+
+input[type=password] {
+    font-family: '맑음 고딕';
+}
+
+.base_color {
+    color: white;
+    background-color: black;
+}
+
+.btn_style {
+    color: red;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 30px;
+    background-color: black;
+}
+
+.btn_style:hover {
+    color: white;
+    border: white 2px solid;
+}
+
+.text_box {
+    margin-bottom: 0px;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+
+/* content */
+
+.content {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.mypage_content {
+    width: 20%;
+    text-align: start;
+    margin: auto;
+}
+
+.index_content {
+    padding-top: 30px;
+    margin: auto;
+    width: 90%;
+}
+
+.review_title {
+    font-size: 26px;
+    color: red;
+    text-decoration: none;
+    text-align: center;
+}
+.review_txt {
+    font-size: 12px;
+    color: rgba(220, 220, 220, 0.904);
+}
+
+.detail_box {
+    text-align: end;
+    width: 50%;
+    margin: auto;
+}
+
+/* detail */
+
+.detail_content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "detail_review detail_review detail_comment";
+    padding: 10px;
+}
+
+.detail_review {
+    grid-area: detail_review;
+    padding: 0px;
+}
+.detail_comment {
+    grid-area: detail_comment;
+}
+
+.review_body {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+/* footer */
+
+.wrap {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+section {
+    padding-bottom: 90px;
+}
+
+footer  {
+    font-size: 14px;
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    padding: 10px;
+}
+.name {
+    color: white;
+    text-decoration: none;
+} 

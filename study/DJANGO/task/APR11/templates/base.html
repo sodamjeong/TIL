@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="icon" href="{% static 'img/movie_favicon.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  {% block style %}
+    
+  {% endblock style %}
+</head>
+<body class="base_color wrap">
+    <nav class="nav_content sticky-top base_color">
+          <a class="nav_logo" href="{% url 'reviews:index' %}" style='color:red;'><img src="{% static 'img/logo.png' %}" alt="logo" class="logo"> About Movie</a>
+          <div class="nav_content_btn">
+            {% if request.user.is_authenticated %}
+              <p class="text_box"><a href="{% url 'accounts:mypage' user.pk %}" class="my_page">{{ user }}</a>님, 안녕하세요.</p>
+              <a href="{% url 'accounts:logout' %}" class="btn btn_style" onclick="return confirm('로그아웃 하시겠습니까?')">Logout</a>
+              <a href="{% url 'reviews:create' %}" class="btn btn_style">글 작성</a>
+              {% else %}
+              <a href="{% url 'accounts:join' %}" class="btn btn_style">Join</a>
+              <a href="{% url 'accounts:login' %}" class="btn btn_style">Login</a>
+            {% endif %}
+          </div>
+    </nav>
+    <section>
+
+      {% block content %}
+    
+      {% endblock content %}
+
+    </section>
+    <footer>
+      <p>
+        <a href='https://github.com/sodamjeong' target='_blank' class="name">정소담</a>
+        <span>KDT 풀스택 2기</span><br/>
+        <span>Copyright 2023. All Rights Reserved.</span>
+      </p>
+    </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+<script>
+  const back = () => {
+    window.history.back()
+  }
+</script>
+</html>

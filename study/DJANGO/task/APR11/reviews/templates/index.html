@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="index_content">
+    {% for review in reviews %}
+      <p class="text_box"><a href="{% url 'reviews:detail' review.pk %}" class="review_title">{{ review.movie }}</a></p>
+      <p class="text_box review_txt">작성일: {{ review.created_at }}</p>
+      <p class="text_box review_txt">Title- {{ review.title }}/ Category - {{ review.category }} </p>
+      <hr>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
