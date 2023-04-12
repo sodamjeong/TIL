@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="index_content">
+    {% for review in reviews %}
+      <p class="text_box"><a href="{% url 'reviews:detail' review.pk %}" class="review_title">{{ review.movie }}</a></p>
+      <p class="text_box review_txt">작성자: {{ review.user }} / 작성일:
+        {% if review.created_string == False %}
+            {{ review.created_at|date:'m월 d일' }}
+        {% else %}
+            {{ review.created_string }}
+        {% endif %}
+      </p>
+      <p class="text_box review_txt">Title- {{ review.title }}/ Category - {{ review.category }} </p>
+      <hr>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'OTWelcomeRA';
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0px;
+}
+/* Main */
+.page_color {
+    background-color: black;
+}
+
+.main {
+    animation: bounce_frames 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: 4;
+    color: red;
+    font-size: 100px;
+    margin-top: 15%;
+    margin-left: 33%;
+    font-family: 'MaplestoryOTFBold';
+}
+
+@keyframes bounce_frames {
+      from {transform: translate3d(0, 0, 0);}
+      to {transform: translate3d(0, 70px, 0);}
+}
+
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+.nav_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    line-height: 35px;
+    height: 70px;
+}
+
+.nav_logo {
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.nav_logo_box {
+    display: grid;
+    word-break: keep-all;
+    grid-template-columns:200px;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.nav_content_btn {
+    grid-column: 4 / 5;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    word-break: keep-all;
+}
+
+.my_page {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* Base */
+
+input[type=password] {
+    font-family: '맑음 고딕';
+}
+
+.base_color {
+    color: white;
+    background-color: black;
+}
+
+.text_box {
+    margin-bottom: 0px;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+/* btn */
+.btn_style {
+    color: red;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 30px;
+    background-color: black;
+}
+
+.btn_style:hover {
+    color: white;
+    border: white 2px solid;
+}
+
+.comment_btn_style {
+    font-size: 14px;
+    color: firebrick;
+    padding: 0px;
+    padding-top: 11px;
+    padding-left: 5px;
+}
+
+.comment_btn_style:hover{
+    color: red;
+}
+
+/* content */
+
+.content {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mypage_content {
+    width: 20%;
+    text-align: start;
+    margin: auto;
+}
+
+.content_inner {
+    width: 22%;
+    text-align: start;
+    margin: auto;
+}
+.content_inner_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.index_content {
+    padding-top: 30px;
+    margin: auto;
+    width: 90%;
+}
+
+.review_title {
+font-size: 25px;
+color: rgb(198, 190, 255);
+text-decoration: none;
+text-align: center;
+}
+
+.review_txt {
+    font-size: 12px;
+    padding: 0px;
+    color: rgba(220, 220, 220, 0.904);
+}
+
+.detail_box {
+    text-align: end;
+    width: 50%;
+    margin: auto;
+}
+
+/* detail */
+
+.detail_content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 70% 30%;
+    padding: 10px;
+}
+
+.review_head {
+    font-size: 35px;
+    color: red;
+    text-align: center;
+    margin-bottom: 0px;
+    height: 35px;
+    line-height: 40px;
+}
+
+.review_subtitle {
+    font-size: 20px;
+    color: rgba(112, 82, 82, 0.858);
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.review_body {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.comment_txt {
+    font-size: 17px;
+}
+
+.comment_box {
+    padding: 8px;
+}
+
+.comment_input {
+    width: 100%;
+    bottom: 110px;
+    position: absolute;
+}
+
+.img {
+    width: 30%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* footer */
+
+.wrap {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+section {
+    padding-bottom: 90px;
+}
+
+footer  {
+    font-size: 14px;
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    padding-left: 20px;
+    padding-top: 25px;
+    background-color: rgb(27, 27, 27);
+}
+.name {
+    color: white;
+    text-decoration: none;
+} 

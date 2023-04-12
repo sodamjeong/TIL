@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Update{% endblock title %}
+
+{% block content %}
+
+<div class="content">
+    <h1>마이페이지</h1>
+    <div class="mypage_content">
+        <p>ID : {{ user.username }}</p>
+        <p>Email : {{ user.email }}</p>
+        <p>Name : {{ user.last_name }}</p>
+        <p>Birthday : {{ user.birthday }}</p>
+    </div>
+    <div class="content">
+        <a href="{% url 'accounts:update' %}" class="btn btn_style">Change Info</a>
+        <a href="{% url 'accounts:delete' %}" class="btn btn_style" onclick="return confirm('탈퇴 시, 더 이상 서비스를 이용하실 수 없습니다.                            정말 탈퇴하시겠습니까?')">Withdraw</a>
+        <input type="submit" value="Back" class="btn btn_style" onclick="back()">
+    </div>
+</div>
+
+{% endblock content %}
