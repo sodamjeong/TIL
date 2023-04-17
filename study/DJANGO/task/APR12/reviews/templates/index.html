@@ -16,6 +16,20 @@
       <p class="text_box review_txt">Title- {{ review.title }}/ Category - {{ review.category }} </p>
       <hr>
     {% endfor %}
+    <div class="d-flex gap-3">
+      {% for rank,movie in movie_list.items %}
+      <div>
+        <h1>{{ rank }}위</h1>
+        <div class = "m-2 bg-primary rounded-2" style="width: 300px; height: 480px; line-height: 440px; text-align: center; ">
+          <img src="{{ movie.0 }}" alt="" class="w-80 h-80 rounded-2">
+          <h3>{{ movie.1}} / {{ movie.2 }}</h3>
+        </div>
+        
+      </div> 
+      {% endfor %}
+    </div>
+         
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLB7PYmHaa-5ppOQ-7LyVYhyNyUhQtN12q&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 

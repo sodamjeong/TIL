@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Update{% endblock title %}
+
+{% block content %}
+
+<div class="mypage_content">
+    <div>
+        <h1>회원정보 수정</h1>
+    </div>
+    <div class="content_inner">
+        <form action="{% url 'accounts:update' %}" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="content_inner_btn">
+              <input type="submit" value="Save" class="btn btn_style">
+              <a href="{% url 'accounts:change_password' %}" class="btn btn_style">Password</a>
+              <input type="submit" value="Back" class="btn btn_style" onclick="back()">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

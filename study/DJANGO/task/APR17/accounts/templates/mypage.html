@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Mypage{% endblock title %}
+{% load static %}
+{% block content %}
+
+<div class="content">
+    <h1>마이페이지</h1>
+    <div class="mypage_content">
+        <div class="profile-image rounded-circle">
+            {% if request.user.profile_image %}
+              <img src="{{ request.user.profile_image.url }}" alt="profile_image" class="object-fit-fill profile">
+            {% else %}
+              <img src="{% static 'img/img-profile-none-bg.png' %}" alt="profile_image_none" class="profile">
+            {% endif %}
+        </div>
+        <p>ID : {{ request.user.username }}</p>
+        <p>Email : {{ request.user.email }}</p>
+        <p>Name : {{ request.user.last_name }}</p>
+        <p>Birthday : {{ request.user.birthday }}</p>
+    </div>
+    <div class="content">
+        <a href="{% url 'accounts:update' %}" class="btn btn_style">Change Info</a>
+        <a href="{% url 'accounts:delete' %}" class="btn btn_style" onclick="return confirm('탈퇴 시, 더 이상 서비스를 이용하실 수 없습니다.                            정말 탈퇴하시겠습니까?')">Withdraw</a>
+        <input type="submit" value="Back" class="btn btn_style" onclick="back()">
+    </div>
+</div>
+
+{% endblock content %}
