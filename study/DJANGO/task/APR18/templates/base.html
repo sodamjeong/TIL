@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="icon" href="{% static 'img/movie_favicon.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  {% block style %}
+    
+  {% endblock style %}
+</head>
+<body class="base_color wrap">
+    <nav class="nav_content sticky-top base_color">
+          <div class="nav_logo">
+            <a class="nav_logo" href="{% url 'articles:index' %}" style='color:red;'><img src="{% static 'img/Facebook-Logo.png' %}" alt="logo" class="logo"></a>
+          </div>
+          
+            {% if request.user.is_authenticated %}
+              <div class="nav_content_txt">
+                <a href="{% url 'accounts:profile' request.user.username%}" class="my_page">{{ request.user.last_name }}</a>님안녕하세요:)
+              </div>
+              <div class="nav_content_btn">
+                <a href="{% url 'accounts:logout' %}" class="btn nav-btn_style" onclick="return confirm('로그아웃 하시겠습니까?')">Logout</a>
+                <a href="{% url 'articles:create' %}" class="btn nav-btn_style">+스토리에 추가</a>
+              </div>
+              {% else %}
+              <div class="nav_content_btn">
+                <a href="{% url 'accounts:join' %}" class="btn nav-btn_style">Join</a>
+                <a href="{% url 'accounts:login' %}" class="btn nav-btn_style">Login</a>
+              </div>
+            {% endif %}
+    </nav>
+    <section>
+
+      {% block content %}
+    
+      {% endblock content %}
+
+    </section>
+    <footer>
+      <p>
+        <a href='https://github.com/sodamjeong' target='_blank' class="name">정소담</a>
+        <span>KDT 풀스택 2기</span><br/>
+        <span>Copyright 2023. All Rights Reserved.</span>
+      </p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+<script>
+  const back = () => {
+    window.history.back()
+  }
+</script>
+</html>

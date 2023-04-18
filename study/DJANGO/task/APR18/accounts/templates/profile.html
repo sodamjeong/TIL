@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% block title %}{{ person.username }}Page{% endblock title %}
+{% load static %}
+{% block content %}
+
+<div class="content">
+    <h1>{{ person.username }}Page</h1>
+    <div class="profile_btn">
+      {% if request.user.username == person.username %}
+        <a href="{% url 'accounts:update' %}" class="btn btn_style">Change Info</a>
+        <a href="{% url 'accounts:delete' %}" class="btn btn_style" onclick="return confirm('탈퇴 시, 더 이상 서비스를 이용하실 수 없습니다.                            정말 탈퇴하시겠습니까?')">Withdraw</a>
+      {% endif %}
+        <input type="submit" value="Back" class="btn" style="color: #1877F2;" onclick="back()">
+    </div>
+    <div class="mypage_content">
+        <div class="profile-image rounded-circle mb-2">
+            {% if person.profile_image %}
+              <img src="{{ person.profile_image.url }}" alt="profile_image" class="object-fit-fill profile">
+            {% else %}
+              <img src="{% static 'img/img-profile-none-bg.png' %}" alt="profile_image_none" class="profile">
+            {% endif %}
+        </div>
+        <div class="follow">
+          <button type="button" class="btn profile_follw_btn position-relative pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#follower" aria-controls="offcanvasExample">
+            Follower
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger pt-2">
+            {{ person.followers.all|length }}
+          </span>
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="follower" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasExampleLabel" style="color:#1A6ED8;">{{ person.username }}님의 Follower</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class='d-flex m-3'>
+                {% for follower in person.followers.all %}
+                <div class='m-2'>
+                  <a href="{% url 'accounts:profile' follower.username %}" class="userinfo-txt">
+                    <div class="userinfo_box">
+                      {% if follower.profile_image %}
+                        <img src="{{ follower.profile_image.url }}" alt="" class="userinfo_img">
+                      {% else %}
+                        <img src="{% static 'img/img-profile-none-bg.png' %}" alt="profile_image_none" class="userinfo_img">
+                      {% endif %}
+                    </div>
+                    <p>{{ follower.username }}</p>
+                  </a>
+                </div>
+                {% empty %}
+                  <P>Follower가 없습니다.</P>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn profile_follw_btn position-relative pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#following" aria-controls="offcanvasExample">
+            Following
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger pt-2">
+            {{ person.followings.all|length }}
+          </span>
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="following" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasExampleLabel" style="color:#1A6ED8;">{{ person.username }}님의 Following</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class='d-flex'>
+                {% for follower in person.followings.all %}
+                <div class='m-2'>
+                  <a href="{% url 'accounts:profile' follower.username %}" class="userinfo-txt">
+                    <div class="userinfo_box">
+                      {% if follower.profile_image %}
+                        <img src="{{ follower.profile_image.url }}" alt="" class="userinfo_img">
+                      {% else %}
+                        <img src="{% static 'img/img-profile-none-bg.png' %}" alt="profile_image_none" class="userinfo_img">
+                      {% endif %}
+                    </div>
+                    <p>{{ follower.username }}</p>
+                  </a>
+                </div>
+                {% empty %}
+                  <P>Following이 없습니다.</P>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+          {% if request.user != person %}
+          <div>
+            <form action="{% url 'accounts:follow' person.username %}" method="POST">
+              {% csrf_token %}
+              {% if request.user in person.followers.all %}
+                <input type="submit" value="Unfollow" class="btn">
+              {% else %}
+                {% if request.user.is_authenticated %}
+                  <input type="submit" value="Follow" class="btn">
+                {% else %}
+                  <input type="submit" value="Follow" class="btn" disabled>
+                {% endif %}
+              {% endif %}
+            </form>
+          </div>
+          {% endif %}
+        </p>
+        <div class="profile_txt">
+          <p>ID : {{ person.username }}</p>
+          <p>Email : {{ person.email }}</p>
+          <p>Name : {{ person.last_name }}</p>
+          <p>Birthday : {{ person.birthday }}</p>
+        </div>
+    </div>
+</div>
+    <div class="userinfo">
+
+      <button type="button" class="btn profile_follw_btn position-relative pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#aricle" aria-controls="offcanvasExample">
+        {{ person.username }}님의 게시글
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger pt-2">
+          {{person.article_set.all|length}}
+        </span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="aricle" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasExampleLabel" style="color:#1A6ED8;">{{ person.username }}님의 게시글</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            {% for article in person.article_set.all %}
+            <div>
+              <span class="userinfo-txt">{{ forloop.counter }}. </span>
+              <a href="{% url 'articles:detail' article.pk %}" class="userinfo-txt">{{ article.title }}</a>
+            </div>
+            {% empty %}
+              <P>작성한 게시글이 없습니다.</P>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn profile_follw_btn position-relative pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#comment" aria-controls="offcanvasExample">
+        {{ person.username }}님의 댓글
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger pt-2">
+          {{person.comment_set.all|length}}
+        </span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="comment" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasExampleLabel"style="color:#1A6ED8;">{{ person.username }}님의 댓글</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            {% for comment in person.comment_set.all %}
+            <div>
+              <span class="userinfo-txt">{{ forloop.counter }}. </span>
+              <a href="{% url 'articles:detail' comment.article.pk %}" class="userinfo-txt">{{ comment.content }}</a>
+            </div>
+            {% empty %}
+              <P class="userinfo-txt">작성한 댓글 없습니다.</P>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn profile_follw_btn position-relative pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#♥" aria-controls="offcanvasExample">
+        {{ person.username }}님의 ♥
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger pt-2">
+          {{ total_likes }}
+        </span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="♥" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasExampleLabel"style="color:#1A6ED8;">{{ person.username }}님의 ♥</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5>좋아요한 게시글</h5>
+          <div>
+            {% for article in person.like_articles.all %}
+            <div>
+              <span class="userinfo-txt">{{ forloop.counter }}. </span>
+              <a href="{% url 'articles:detail' article.pk %}" class="userinfo-txt">{{ article.title }}</a>
+            </div>
+            {% empty %}
+              <P>좋아요한 게시글이 없습니다.</P>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="offcanvas-body">
+          <h5>좋아요한 댓글</h5>
+          <div>
+            {% for comment in person.like_comments.all %}
+            <div>
+              <span class="userinfo-txt">{{ forloop.counter }}. </span>
+              <a href="{% url 'articles:detail' comment.article.pk %}" class="userinfo-txt">{{ comment.content }}</a>
+            </div>
+            {% empty %}
+              <P>좋아요한 댓글이 없습니다.</P>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+          
+          
+
+{% endblock content %}
