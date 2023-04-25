@@ -7,6 +7,9 @@
   - 해당 자원(URI)에 대한 CRUD Operation을 적용 
   - Create : 데이터 생성(POST), Read : 데이터 조회(GET), Update : 데이터 수정(PUT), Delete : 데이터 삭제(DELETE)
 
+  * PUT : 전체 수정, 값이 없는데 요청할 경우 새로 생성
+  * PATCH : 부분 수정, 값이 없는데 요청할 경우 오류 발생
+
 ### REST 구성요소
 
 1. 자원(Resource) : HTTP URI
